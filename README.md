@@ -9,4 +9,4 @@ DO NOT UPLOAD TO VIRUSTOTAL!!!
 
 # Screenshot
 
-![crypter](crypter.PNG)
+![crypter](Crypter.PNG)
