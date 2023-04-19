@@ -57,6 +57,8 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <None Include="Resources\Nik32.cs" />
+    <None Include="Resources\NIK64.cs" />
     <None Include="Resources\Program.cs" />
     <None Include="Resources\config.cs" />
     <EmbeddedResource Include="Form1.resx">

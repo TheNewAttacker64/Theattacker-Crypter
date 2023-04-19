@@ -29,6 +29,7 @@ namespace attackercrypter
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
@@ -65,9 +66,30 @@ namespace attackercrypter
             this.label11 = new System.Windows.Forms.Label();
             this.button5 = new System.Windows.Forms.Button();
             this.author = new System.Windows.Forms.LinkLabel();
+            this.button6 = new System.Windows.Forms.Button();
+            this.assembly = new System.Windows.Forms.CheckBox();
+            this.txtCopyright = new System.Windows.Forms.TextBox();
+            this.txtTrademark = new System.Windows.Forms.TextBox();
+            this.txtDescription = new System.Windows.Forms.TextBox();
+            this.txtCompany = new System.Windows.Forms.TextBox();
+            this.txtProduct = new System.Windows.Forms.TextBox();
+            this.assemblyMajorVersion = new System.Windows.Forms.NumericUpDown();
+            this.assemblyMinorVersion = new System.Windows.Forms.NumericUpDown();
+            this.assemblyBuildPart = new System.Windows.Forms.NumericUpDown();
+            this.assemblyPrivatePart = new System.Windows.Forms.NumericUpDown();
+            this.txtTitle = new System.Windows.Forms.TextBox();
+            this.radio64 = new System.Windows.Forms.RadioButton();
+            this.radio32 = new System.Windows.Forms.RadioButton();
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.runpecheck = new System.Windows.Forms.CheckBox();
+            this.injectionpath = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownSc)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownSleep)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureIcon)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.assemblyMajorVersion)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.assemblyMinorVersion)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.assemblyBuildPart)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.assemblyPrivatePart)).BeginInit();
             this.SuspendLayout();
             // 
             // textBox1
@@ -138,7 +160,8 @@ namespace attackercrypter
             this.Injection.ForeColor = System.Drawing.Color.Black;
             this.Injection.FormattingEnabled = true;
             this.Injection.Items.AddRange(new object[] {
-            "AssemblyLoad(.Net)"});
+            "AssemblyLoad(.Net)",
+            "RunPE"});
             this.Injection.Location = new System.Drawing.Point(36, 228);
             this.Injection.Name = "Injection";
             this.Injection.Size = new System.Drawing.Size(381, 24);
@@ -214,7 +237,7 @@ namespace attackercrypter
             this.checkBox2.BackColor = System.Drawing.Color.Transparent;
             this.checkBox2.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Italic);
             this.checkBox2.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.checkBox2.Location = new System.Drawing.Point(453, 19);
+            this.checkBox2.Location = new System.Drawing.Point(460, 12);
             this.checkBox2.Name = "checkBox2";
             this.checkBox2.Size = new System.Drawing.Size(250, 32);
             this.checkBox2.TabIndex = 30;
@@ -314,7 +337,7 @@ namespace attackercrypter
             // 
             // numericUpDownSleep
             // 
-            this.numericUpDownSleep.Location = new System.Drawing.Point(225, 339);
+            this.numericUpDownSleep.Location = new System.Drawing.Point(294, 313);
             this.numericUpDownSleep.Name = "numericUpDownSleep";
             this.numericUpDownSleep.Size = new System.Drawing.Size(92, 20);
             this.numericUpDownSleep.TabIndex = 40;
@@ -339,7 +362,7 @@ namespace attackercrypter
             this.label9.BackColor = System.Drawing.Color.Transparent;
             this.label9.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Italic);
             this.label9.ForeColor = System.Drawing.Color.Transparent;
-            this.label9.Location = new System.Drawing.Point(323, 339);
+            this.label9.Location = new System.Drawing.Point(392, 313);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(63, 16);
             this.label9.TabIndex = 42;
@@ -392,7 +415,7 @@ namespace attackercrypter
             this.button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.button2.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button2.ForeColor = System.Drawing.Color.DimGray;
-            this.button2.Location = new System.Drawing.Point(554, 344);
+            this.button2.Location = new System.Drawing.Point(4, 436);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(413, 33);
             this.button2.TabIndex = 46;
@@ -407,7 +430,7 @@ namespace attackercrypter
             this.label10.BackColor = System.Drawing.Color.Transparent;
             this.label10.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label10.ForeColor = System.Drawing.Color.White;
-            this.label10.Location = new System.Drawing.Point(763, 267);
+            this.label10.Location = new System.Drawing.Point(213, 359);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(87, 28);
             this.label10.TabIndex = 47;
@@ -415,7 +438,7 @@ namespace attackercrypter
             // 
             // textBox4
             // 
-            this.textBox4.Location = new System.Drawing.Point(658, 318);
+            this.textBox4.Location = new System.Drawing.Point(108, 413);
             this.textBox4.Name = "textBox4";
             this.textBox4.Size = new System.Drawing.Size(309, 20);
             this.textBox4.TabIndex = 48;
@@ -426,7 +449,7 @@ namespace attackercrypter
             this.label11.BackColor = System.Drawing.Color.Transparent;
             this.label11.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label11.ForeColor = System.Drawing.Color.White;
-            this.label11.Location = new System.Drawing.Point(599, 313);
+            this.label11.Location = new System.Drawing.Point(49, 405);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(43, 28);
             this.label11.TabIndex = 49;
@@ -460,12 +483,198 @@ namespace attackercrypter
             this.author.Text = "Dev";
             this.author.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.author_LinkClicked);
             // 
+            // button6
+            // 
+            this.button6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            this.button6.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.button6.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button6.ForeColor = System.Drawing.Color.DimGray;
+            this.button6.Location = new System.Drawing.Point(854, 376);
+            this.button6.Name = "button6";
+            this.button6.Size = new System.Drawing.Size(125, 57);
+            this.button6.TabIndex = 52;
+            this.button6.Text = "Clone Assembly ";
+            this.button6.UseCompatibleTextRendering = true;
+            this.button6.UseVisualStyleBackColor = false;
+            this.button6.Click += new System.EventHandler(this.button6_Click);
+            // 
+            // assembly
+            // 
+            this.assembly.AutoSize = true;
+            this.assembly.BackColor = System.Drawing.Color.Transparent;
+            this.assembly.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Italic);
+            this.assembly.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.assembly.Location = new System.Drawing.Point(785, 185);
+            this.assembly.Name = "assembly";
+            this.assembly.Size = new System.Drawing.Size(223, 32);
+            this.assembly.TabIndex = 53;
+            this.assembly.Text = "Change Assembly";
+            this.assembly.UseVisualStyleBackColor = false;
+            // 
+            // txtCopyright
+            // 
+            this.txtCopyright.Location = new System.Drawing.Point(707, 285);
+            this.txtCopyright.Margin = new System.Windows.Forms.Padding(2);
+            this.txtCopyright.Name = "txtCopyright";
+            this.txtCopyright.Size = new System.Drawing.Size(143, 20);
+            this.txtCopyright.TabIndex = 59;
+            // 
+            // txtTrademark
+            // 
+            this.txtTrademark.Location = new System.Drawing.Point(854, 309);
+            this.txtTrademark.Margin = new System.Windows.Forms.Padding(2);
+            this.txtTrademark.Name = "txtTrademark";
+            this.txtTrademark.Size = new System.Drawing.Size(143, 20);
+            this.txtTrademark.TabIndex = 55;
+            // 
+            // txtDescription
+            // 
+            this.txtDescription.Location = new System.Drawing.Point(856, 261);
+            this.txtDescription.Margin = new System.Windows.Forms.Padding(2);
+            this.txtDescription.Name = "txtDescription";
+            this.txtDescription.Size = new System.Drawing.Size(143, 20);
+            this.txtDescription.TabIndex = 56;
+            // 
+            // txtCompany
+            // 
+            this.txtCompany.Location = new System.Drawing.Point(854, 285);
+            this.txtCompany.Margin = new System.Windows.Forms.Padding(2);
+            this.txtCompany.Name = "txtCompany";
+            this.txtCompany.Size = new System.Drawing.Size(143, 20);
+            this.txtCompany.TabIndex = 57;
+            // 
+            // txtProduct
+            // 
+            this.txtProduct.Location = new System.Drawing.Point(707, 309);
+            this.txtProduct.Margin = new System.Windows.Forms.Padding(2);
+            this.txtProduct.Name = "txtProduct";
+            this.txtProduct.Size = new System.Drawing.Size(143, 20);
+            this.txtProduct.TabIndex = 58;
+            // 
+            // assemblyMajorVersion
+            // 
+            this.assemblyMajorVersion.Location = new System.Drawing.Point(854, 347);
+            this.assemblyMajorVersion.Margin = new System.Windows.Forms.Padding(2);
+            this.assemblyMajorVersion.Name = "assemblyMajorVersion";
+            this.assemblyMajorVersion.Size = new System.Drawing.Size(31, 20);
+            this.assemblyMajorVersion.TabIndex = 66;
+            // 
+            // assemblyMinorVersion
+            // 
+            this.assemblyMinorVersion.Location = new System.Drawing.Point(890, 347);
+            this.assemblyMinorVersion.Margin = new System.Windows.Forms.Padding(2);
+            this.assemblyMinorVersion.Name = "assemblyMinorVersion";
+            this.assemblyMinorVersion.Size = new System.Drawing.Size(31, 20);
+            this.assemblyMinorVersion.TabIndex = 67;
+            // 
+            // assemblyBuildPart
+            // 
+            this.assemblyBuildPart.Location = new System.Drawing.Point(928, 347);
+            this.assemblyBuildPart.Margin = new System.Windows.Forms.Padding(2);
+            this.assemblyBuildPart.Name = "assemblyBuildPart";
+            this.assemblyBuildPart.Size = new System.Drawing.Size(31, 20);
+            this.assemblyBuildPart.TabIndex = 68;
+            // 
+            // assemblyPrivatePart
+            // 
+            this.assemblyPrivatePart.Location = new System.Drawing.Point(966, 347);
+            this.assemblyPrivatePart.Margin = new System.Windows.Forms.Padding(2);
+            this.assemblyPrivatePart.Name = "assemblyPrivatePart";
+            this.assemblyPrivatePart.Size = new System.Drawing.Size(31, 20);
+            this.assemblyPrivatePart.TabIndex = 69;
+            // 
+            // txtTitle
+            // 
+            this.txtTitle.Location = new System.Drawing.Point(854, 237);
+            this.txtTitle.Margin = new System.Windows.Forms.Padding(2);
+            this.txtTitle.Name = "txtTitle";
+            this.txtTitle.Size = new System.Drawing.Size(143, 20);
+            this.txtTitle.TabIndex = 54;
+            // 
+            // radio64
+            // 
+            this.radio64.AutoSize = true;
+            this.radio64.BackColor = System.Drawing.Color.Transparent;
+            this.radio64.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Italic);
+            this.radio64.ForeColor = System.Drawing.Color.Transparent;
+            this.radio64.Location = new System.Drawing.Point(491, 344);
+            this.radio64.Name = "radio64";
+            this.radio64.Size = new System.Drawing.Size(68, 32);
+            this.radio64.TabIndex = 71;
+            this.radio64.TabStop = true;
+            this.radio64.Text = "x64";
+            this.radio64.UseVisualStyleBackColor = false;
+            // 
+            // radio32
+            // 
+            this.radio32.AutoSize = true;
+            this.radio32.BackColor = System.Drawing.Color.Transparent;
+            this.radio32.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Italic);
+            this.radio32.ForeColor = System.Drawing.Color.White;
+            this.radio32.Location = new System.Drawing.Point(491, 384);
+            this.radio32.Name = "radio32";
+            this.radio32.Size = new System.Drawing.Size(68, 32);
+            this.radio32.TabIndex = 72;
+            this.radio32.TabStop = true;
+            this.radio32.Text = "x32";
+            this.radio32.UseVisualStyleBackColor = false;
+            // 
+            // contextMenuStrip1
+            // 
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
+            // 
+            // runpecheck
+            // 
+            this.runpecheck.AutoSize = true;
+            this.runpecheck.BackColor = System.Drawing.Color.Transparent;
+            this.runpecheck.Font = new System.Drawing.Font("Arial", 17F, System.Drawing.FontStyle.Italic);
+            this.runpecheck.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.runpecheck.Location = new System.Drawing.Point(461, 313);
+            this.runpecheck.Name = "runpecheck";
+            this.runpecheck.Size = new System.Drawing.Size(201, 32);
+            this.runpecheck.TabIndex = 76;
+            this.runpecheck.Text = "RUNPE Settings";
+            this.runpecheck.UseVisualStyleBackColor = false;
+            // 
+            // injectionpath
+            // 
+            this.injectionpath.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.injectionpath.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.injectionpath.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.injectionpath.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.injectionpath.ForeColor = System.Drawing.Color.Black;
+            this.injectionpath.FormattingEnabled = true;
+            this.injectionpath.Items.AddRange(new object[] {
+            "installutil.exe",
+            "RegAsm.exe"});
+            this.injectionpath.Location = new System.Drawing.Point(460, 422);
+            this.injectionpath.Name = "injectionpath";
+            this.injectionpath.Size = new System.Drawing.Size(293, 24);
+            this.injectionpath.TabIndex = 77;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::attackercrypter.Properties.Resources.kali_linux_3;
-            this.ClientSize = new System.Drawing.Size(1001, 389);
+            this.ClientSize = new System.Drawing.Size(1160, 500);
+            this.Controls.Add(this.injectionpath);
+            this.Controls.Add(this.runpecheck);
+            this.Controls.Add(this.radio32);
+            this.Controls.Add(this.radio64);
+            this.Controls.Add(this.assemblyPrivatePart);
+            this.Controls.Add(this.assemblyBuildPart);
+            this.Controls.Add(this.assemblyMinorVersion);
+            this.Controls.Add(this.assemblyMajorVersion);
+            this.Controls.Add(this.txtProduct);
+            this.Controls.Add(this.txtCompany);
+            this.Controls.Add(this.txtDescription);
+            this.Controls.Add(this.txtTrademark);
+            this.Controls.Add(this.txtCopyright);
+            this.Controls.Add(this.txtTitle);
+            this.Controls.Add(this.assembly);
+            this.Controls.Add(this.button6);
             this.Controls.Add(this.author);
             this.Controls.Add(this.button5);
             this.Controls.Add(this.label11);
@@ -508,6 +717,10 @@ namespace attackercrypter
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownSc)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownSleep)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureIcon)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.assemblyMajorVersion)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.assemblyMinorVersion)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.assemblyBuildPart)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.assemblyPrivatePart)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -550,6 +763,23 @@ namespace attackercrypter
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.LinkLabel author;
+        private System.Windows.Forms.Button button6;
+        private System.Windows.Forms.CheckBox assembly;
+        public System.Windows.Forms.TextBox txtCopyright;
+        public System.Windows.Forms.TextBox txtTrademark;
+        public System.Windows.Forms.TextBox txtDescription;
+        public System.Windows.Forms.TextBox txtCompany;
+        public System.Windows.Forms.TextBox txtProduct;
+        public System.Windows.Forms.NumericUpDown assemblyMajorVersion;
+        public System.Windows.Forms.NumericUpDown assemblyMinorVersion;
+        public System.Windows.Forms.NumericUpDown assemblyBuildPart;
+        public System.Windows.Forms.NumericUpDown assemblyPrivatePart;
+        public System.Windows.Forms.TextBox txtTitle;
+        private System.Windows.Forms.RadioButton radio64;
+        private System.Windows.Forms.RadioButton radio32;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
+        private System.Windows.Forms.CheckBox runpecheck;
+        private System.Windows.Forms.ComboBox injectionpath;
     }
 }
 
