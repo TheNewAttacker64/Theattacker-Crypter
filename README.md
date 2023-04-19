@@ -33,6 +33,10 @@ DO NOT UPLOAD TO VIRUSTOTAL!!!
 
  I don t know how much This will stay FUD but will be updating it always and adding New Injection and new Attacks to it 
  
+ # HINT 
+ 
+ Simple Note to avoid Detection Completely Use .NET obfuscator like Smart Assembly
+ 
  # Support 
  
  if you want to support any of my work you could donate here 
