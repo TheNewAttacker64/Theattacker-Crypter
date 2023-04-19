@@ -12,6 +12,16 @@ DO NOT UPLOAD TO VIRUSTOTAL!!!
 ![crypter](Crypter.PNG)
 
 
+## Updates
+- Added RUNPE
+- Added support for  32 bit injection
+- Added support for 64 bit injection
+- Ability to clone Assembly 
+
+- [current last version](https://github.com/TheNewAttacker64/Theattacker-Crypter/releases/tag/0.1)
+
+
+
 # Usage
 
 1. Download Crypter from Releases
