@@ -13,6 +13,7 @@ DO NOT UPLOAD TO VIRUSTOTAL!!!
 
 
 ## Updates
+- Added AMSI Bypass
 - Added RUNPE
 - Added support for  32 bit injection
 - Added support for 64 bit injection
