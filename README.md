@@ -39,6 +39,10 @@ DO NOT UPLOAD TO VIRUSTOTAL!!!
  
  Simple Note to avoid Detection Completely Use .NET obfuscator like Smart Assembly
  
+ # YT-VID
+ 
+ https://www.youtube.com/watch?v=caev1GH8PzE
+ 
  # Support 
  
  if you want to support any of my work you could donate here 
