@@ -31,6 +31,7 @@ DO NOT UPLOAD TO VIRUSTOTAL!!!
 2. choose File and Generate Encryption Key
 3. Upload Loader.txt in  raw url Ex(pasteBin)
 4. put the url in the build Section and Build
+5. Ability to execute your own Encoded Powershell Commands
 
 # Detection rate 
 
