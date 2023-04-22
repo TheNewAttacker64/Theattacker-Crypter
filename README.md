@@ -60,6 +60,8 @@ DO NOT UPLOAD TO VIRUSTOTAL!!!
  
  # Support 
  
+ Star this Repo if you like the tool
+ 
  if you want to support any of my work you could donate here 
  
  BTC:1Fzdh15YCAc97Q148VQgLCZYNqoxvp5xKh
