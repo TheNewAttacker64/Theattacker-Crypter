@@ -21,7 +21,7 @@ DO NOT UPLOAD TO VIRUSTOTAL!!!
 - Ability to execute your own Encoded Powershell Commands
 - Ability to Disable Amsi even if you are not injecting .Net Paylaod
 
-- [current last version](https://github.com/TheNewAttacker64/Theattacker-Crypter/releases/tag/0.1)
+- [current last version](https://github.com/TheNewAttacker64/Theattacker-Crypter/releases/tag/0.2)
 
 # poc
 
