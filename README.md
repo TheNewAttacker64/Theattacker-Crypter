@@ -18,6 +18,8 @@ DO NOT UPLOAD TO VIRUSTOTAL!!!
 - Added support for  32 bit injection
 - Added support for 64 bit injection
 - Ability to clone Assembly 
+- Ability to execute your own Encoded Powershell Commands
+- Ability to Disable Amsi even if you are not injecting .Net Paylaod
 
 - [current last version](https://github.com/TheNewAttacker64/Theattacker-Crypter/releases/tag/0.1)
 
@@ -31,7 +33,6 @@ DO NOT UPLOAD TO VIRUSTOTAL!!!
 2. choose File and Generate Encryption Key
 3. Upload Loader.txt in  raw url Ex(pasteBin)
 4. put the url in the build Section and Build
-5. Ability to execute your own Encoded Powershell Commands
 
 # Detection rate 
 
