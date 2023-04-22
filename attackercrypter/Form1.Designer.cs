@@ -83,6 +83,9 @@ namespace attackercrypter
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.runpecheck = new System.Windows.Forms.CheckBox();
             this.injectionpath = new System.Windows.Forms.ComboBox();
+            this.powershellcommand = new System.Windows.Forms.TextBox();
+            this.powershell = new System.Windows.Forms.CheckBox();
+            this.Amsi = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownSc)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownSleep)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureIcon)).BeginInit();
@@ -135,7 +138,7 @@ namespace attackercrypter
             this.exdf.Cursor = System.Windows.Forms.Cursors.Cross;
             this.exdf.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Italic);
             this.exdf.ForeColor = System.Drawing.Color.Transparent;
-            this.exdf.Location = new System.Drawing.Point(36, 313);
+            this.exdf.Location = new System.Drawing.Point(17, 312);
             this.exdf.Name = "exdf";
             this.exdf.Size = new System.Drawing.Size(143, 20);
             this.exdf.TabIndex = 7;
@@ -337,7 +340,7 @@ namespace attackercrypter
             // 
             // numericUpDownSleep
             // 
-            this.numericUpDownSleep.Location = new System.Drawing.Point(294, 313);
+            this.numericUpDownSleep.Location = new System.Drawing.Point(237, 309);
             this.numericUpDownSleep.Name = "numericUpDownSleep";
             this.numericUpDownSleep.Size = new System.Drawing.Size(92, 20);
             this.numericUpDownSleep.TabIndex = 40;
@@ -349,7 +352,7 @@ namespace attackercrypter
             this.Sleeptime.Cursor = System.Windows.Forms.Cursors.Cross;
             this.Sleeptime.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Italic);
             this.Sleeptime.ForeColor = System.Drawing.Color.Transparent;
-            this.Sleeptime.Location = new System.Drawing.Point(225, 313);
+            this.Sleeptime.Location = new System.Drawing.Point(168, 309);
             this.Sleeptime.Name = "Sleeptime";
             this.Sleeptime.Size = new System.Drawing.Size(63, 20);
             this.Sleeptime.TabIndex = 41;
@@ -362,7 +365,7 @@ namespace attackercrypter
             this.label9.BackColor = System.Drawing.Color.Transparent;
             this.label9.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Italic);
             this.label9.ForeColor = System.Drawing.Color.Transparent;
-            this.label9.Location = new System.Drawing.Point(392, 313);
+            this.label9.Location = new System.Drawing.Point(335, 309);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(63, 16);
             this.label9.TabIndex = 42;
@@ -430,7 +433,7 @@ namespace attackercrypter
             this.label10.BackColor = System.Drawing.Color.Transparent;
             this.label10.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label10.ForeColor = System.Drawing.Color.White;
-            this.label10.Location = new System.Drawing.Point(213, 359);
+            this.label10.Location = new System.Drawing.Point(220, 382);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(87, 28);
             this.label10.TabIndex = 47;
@@ -489,7 +492,7 @@ namespace attackercrypter
             this.button6.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.button6.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button6.ForeColor = System.Drawing.Color.DimGray;
-            this.button6.Location = new System.Drawing.Point(854, 376);
+            this.button6.Location = new System.Drawing.Point(1088, 358);
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(125, 57);
             this.button6.TabIndex = 52;
@@ -504,7 +507,7 @@ namespace attackercrypter
             this.assembly.BackColor = System.Drawing.Color.Transparent;
             this.assembly.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Italic);
             this.assembly.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.assembly.Location = new System.Drawing.Point(785, 185);
+            this.assembly.Location = new System.Drawing.Point(1019, 167);
             this.assembly.Name = "assembly";
             this.assembly.Size = new System.Drawing.Size(223, 32);
             this.assembly.TabIndex = 53;
@@ -513,7 +516,7 @@ namespace attackercrypter
             // 
             // txtCopyright
             // 
-            this.txtCopyright.Location = new System.Drawing.Point(707, 285);
+            this.txtCopyright.Location = new System.Drawing.Point(941, 267);
             this.txtCopyright.Margin = new System.Windows.Forms.Padding(2);
             this.txtCopyright.Name = "txtCopyright";
             this.txtCopyright.Size = new System.Drawing.Size(143, 20);
@@ -521,7 +524,7 @@ namespace attackercrypter
             // 
             // txtTrademark
             // 
-            this.txtTrademark.Location = new System.Drawing.Point(854, 309);
+            this.txtTrademark.Location = new System.Drawing.Point(1088, 291);
             this.txtTrademark.Margin = new System.Windows.Forms.Padding(2);
             this.txtTrademark.Name = "txtTrademark";
             this.txtTrademark.Size = new System.Drawing.Size(143, 20);
@@ -529,7 +532,7 @@ namespace attackercrypter
             // 
             // txtDescription
             // 
-            this.txtDescription.Location = new System.Drawing.Point(856, 261);
+            this.txtDescription.Location = new System.Drawing.Point(1090, 243);
             this.txtDescription.Margin = new System.Windows.Forms.Padding(2);
             this.txtDescription.Name = "txtDescription";
             this.txtDescription.Size = new System.Drawing.Size(143, 20);
@@ -537,7 +540,7 @@ namespace attackercrypter
             // 
             // txtCompany
             // 
-            this.txtCompany.Location = new System.Drawing.Point(854, 285);
+            this.txtCompany.Location = new System.Drawing.Point(1088, 267);
             this.txtCompany.Margin = new System.Windows.Forms.Padding(2);
             this.txtCompany.Name = "txtCompany";
             this.txtCompany.Size = new System.Drawing.Size(143, 20);
@@ -545,7 +548,7 @@ namespace attackercrypter
             // 
             // txtProduct
             // 
-            this.txtProduct.Location = new System.Drawing.Point(707, 309);
+            this.txtProduct.Location = new System.Drawing.Point(941, 291);
             this.txtProduct.Margin = new System.Windows.Forms.Padding(2);
             this.txtProduct.Name = "txtProduct";
             this.txtProduct.Size = new System.Drawing.Size(143, 20);
@@ -553,7 +556,7 @@ namespace attackercrypter
             // 
             // assemblyMajorVersion
             // 
-            this.assemblyMajorVersion.Location = new System.Drawing.Point(854, 347);
+            this.assemblyMajorVersion.Location = new System.Drawing.Point(1088, 329);
             this.assemblyMajorVersion.Margin = new System.Windows.Forms.Padding(2);
             this.assemblyMajorVersion.Name = "assemblyMajorVersion";
             this.assemblyMajorVersion.Size = new System.Drawing.Size(31, 20);
@@ -561,7 +564,7 @@ namespace attackercrypter
             // 
             // assemblyMinorVersion
             // 
-            this.assemblyMinorVersion.Location = new System.Drawing.Point(890, 347);
+            this.assemblyMinorVersion.Location = new System.Drawing.Point(1124, 329);
             this.assemblyMinorVersion.Margin = new System.Windows.Forms.Padding(2);
             this.assemblyMinorVersion.Name = "assemblyMinorVersion";
             this.assemblyMinorVersion.Size = new System.Drawing.Size(31, 20);
@@ -569,7 +572,7 @@ namespace attackercrypter
             // 
             // assemblyBuildPart
             // 
-            this.assemblyBuildPart.Location = new System.Drawing.Point(928, 347);
+            this.assemblyBuildPart.Location = new System.Drawing.Point(1162, 329);
             this.assemblyBuildPart.Margin = new System.Windows.Forms.Padding(2);
             this.assemblyBuildPart.Name = "assemblyBuildPart";
             this.assemblyBuildPart.Size = new System.Drawing.Size(31, 20);
@@ -577,7 +580,7 @@ namespace attackercrypter
             // 
             // assemblyPrivatePart
             // 
-            this.assemblyPrivatePart.Location = new System.Drawing.Point(966, 347);
+            this.assemblyPrivatePart.Location = new System.Drawing.Point(1200, 329);
             this.assemblyPrivatePart.Margin = new System.Windows.Forms.Padding(2);
             this.assemblyPrivatePart.Name = "assemblyPrivatePart";
             this.assemblyPrivatePart.Size = new System.Drawing.Size(31, 20);
@@ -585,7 +588,7 @@ namespace attackercrypter
             // 
             // txtTitle
             // 
-            this.txtTitle.Location = new System.Drawing.Point(854, 237);
+            this.txtTitle.Location = new System.Drawing.Point(1088, 219);
             this.txtTitle.Margin = new System.Windows.Forms.Padding(2);
             this.txtTitle.Name = "txtTitle";
             this.txtTitle.Size = new System.Drawing.Size(143, 20);
@@ -597,7 +600,7 @@ namespace attackercrypter
             this.radio64.BackColor = System.Drawing.Color.Transparent;
             this.radio64.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Italic);
             this.radio64.ForeColor = System.Drawing.Color.Transparent;
-            this.radio64.Location = new System.Drawing.Point(491, 344);
+            this.radio64.Location = new System.Drawing.Point(677, 337);
             this.radio64.Name = "radio64";
             this.radio64.Size = new System.Drawing.Size(68, 32);
             this.radio64.TabIndex = 71;
@@ -611,7 +614,7 @@ namespace attackercrypter
             this.radio32.BackColor = System.Drawing.Color.Transparent;
             this.radio32.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Italic);
             this.radio32.ForeColor = System.Drawing.Color.White;
-            this.radio32.Location = new System.Drawing.Point(491, 384);
+            this.radio32.Location = new System.Drawing.Point(677, 377);
             this.radio32.Name = "radio32";
             this.radio32.Size = new System.Drawing.Size(68, 32);
             this.radio32.TabIndex = 72;
@@ -630,7 +633,7 @@ namespace attackercrypter
             this.runpecheck.BackColor = System.Drawing.Color.Transparent;
             this.runpecheck.Font = new System.Drawing.Font("Arial", 17F, System.Drawing.FontStyle.Italic);
             this.runpecheck.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.runpecheck.Location = new System.Drawing.Point(461, 313);
+            this.runpecheck.Location = new System.Drawing.Point(647, 299);
             this.runpecheck.Name = "runpecheck";
             this.runpecheck.Size = new System.Drawing.Size(201, 32);
             this.runpecheck.TabIndex = 76;
@@ -648,17 +651,56 @@ namespace attackercrypter
             this.injectionpath.Items.AddRange(new object[] {
             "installutil.exe",
             "RegAsm.exe"});
-            this.injectionpath.Location = new System.Drawing.Point(460, 422);
+            this.injectionpath.Location = new System.Drawing.Point(646, 415);
             this.injectionpath.Name = "injectionpath";
             this.injectionpath.Size = new System.Drawing.Size(293, 24);
             this.injectionpath.TabIndex = 77;
+            // 
+            // powershellcommand
+            // 
+            this.powershellcommand.Location = new System.Drawing.Point(173, 359);
+            this.powershellcommand.Name = "powershellcommand";
+            this.powershellcommand.Size = new System.Drawing.Size(312, 20);
+            this.powershellcommand.TabIndex = 78;
+            this.powershellcommand.Text = "Start-Process \"https://www.google.com/\"";
+            // 
+            // powershell
+            // 
+            this.powershell.AutoSize = true;
+            this.powershell.BackColor = System.Drawing.Color.Transparent;
+            this.powershell.Cursor = System.Windows.Forms.Cursors.Cross;
+            this.powershell.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Italic);
+            this.powershell.ForeColor = System.Drawing.Color.Transparent;
+            this.powershell.Location = new System.Drawing.Point(4, 359);
+            this.powershell.Name = "powershell";
+            this.powershell.Size = new System.Drawing.Size(163, 20);
+            this.powershell.TabIndex = 79;
+            this.powershell.Text = "Powershell Command";
+            this.powershell.UseVisualStyleBackColor = false;
+            // 
+            // Amsi
+            // 
+            this.Amsi.AutoSize = true;
+            this.Amsi.BackColor = System.Drawing.Color.Transparent;
+            this.Amsi.Cursor = System.Windows.Forms.Cursors.Cross;
+            this.Amsi.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Italic);
+            this.Amsi.ForeColor = System.Drawing.Color.Transparent;
+            this.Amsi.Location = new System.Drawing.Point(424, 305);
+            this.Amsi.Name = "Amsi";
+            this.Amsi.Size = new System.Drawing.Size(106, 20);
+            this.Amsi.TabIndex = 80;
+            this.Amsi.Text = "Bypass Amsi";
+            this.Amsi.UseVisualStyleBackColor = false;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::attackercrypter.Properties.Resources.kali_linux_3;
-            this.ClientSize = new System.Drawing.Size(1160, 500);
+            this.ClientSize = new System.Drawing.Size(1268, 506);
+            this.Controls.Add(this.Amsi);
+            this.Controls.Add(this.powershell);
+            this.Controls.Add(this.powershellcommand);
             this.Controls.Add(this.injectionpath);
             this.Controls.Add(this.runpecheck);
             this.Controls.Add(this.radio32);
@@ -780,6 +822,9 @@ namespace attackercrypter
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
         private System.Windows.Forms.CheckBox runpecheck;
         private System.Windows.Forms.ComboBox injectionpath;
+        private System.Windows.Forms.TextBox powershellcommand;
+        private System.Windows.Forms.CheckBox powershell;
+        private System.Windows.Forms.CheckBox Amsi;
     }
 }
 

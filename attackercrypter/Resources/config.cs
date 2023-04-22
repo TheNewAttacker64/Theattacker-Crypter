@@ -24,7 +24,9 @@ namespace Stubcry
         public static bool isrunportal32 = false;
         public static bool isrunportal64 = false;
         public static bool isdotnetload = false;
+        public static bool ispassamsi = false;
+        public static bool ispwcommand = false;
         public static string ipath = Path.Combine(RuntimeEnvironment.GetRuntimeDirectory(), "#INJECTPATH");
-
+        public static string command = "$command";
     }
 }

