@@ -53,6 +53,7 @@ DO NOT UPLOAD TO VIRUSTOTAL!!!
 - [ ] Loading Payload locally instead of loading our shellcode from url
 - [ ] adding Different Encryption Methods 
 - [ ] Generate  Infected Undetected  PDF File
+- [ ] Linux Support
 
 
 
