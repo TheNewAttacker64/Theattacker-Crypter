@@ -82,10 +82,17 @@ namespace attackercrypter
             this.radio32 = new System.Windows.Forms.RadioButton();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.runpecheck = new System.Windows.Forms.CheckBox();
-            this.injectionpath = new System.Windows.Forms.ComboBox();
+            this.Netinjectionpath = new System.Windows.Forms.ComboBox();
             this.powershellcommand = new System.Windows.Forms.TextBox();
             this.powershell = new System.Windows.Forms.CheckBox();
             this.Amsi = new System.Windows.Forms.CheckBox();
+            this.label12 = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
+            this.nativeinjection = new System.Windows.Forms.ComboBox();
+            this.backgroundWorker2 = new System.ComponentModel.BackgroundWorker();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.isNet = new System.Windows.Forms.RadioButton();
+            this.isNative = new System.Windows.Forms.RadioButton();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownSc)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownSleep)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureIcon)).BeginInit();
@@ -93,6 +100,7 @@ namespace attackercrypter
             ((System.ComponentModel.ISupportInitialize)(this.assemblyMinorVersion)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.assemblyBuildPart)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.assemblyPrivatePart)).BeginInit();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // textBox1
@@ -418,7 +426,7 @@ namespace attackercrypter
             this.button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.button2.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button2.ForeColor = System.Drawing.Color.DimGray;
-            this.button2.Location = new System.Drawing.Point(4, 436);
+            this.button2.Location = new System.Drawing.Point(4, 509);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(413, 33);
             this.button2.TabIndex = 46;
@@ -433,7 +441,7 @@ namespace attackercrypter
             this.label10.BackColor = System.Drawing.Color.Transparent;
             this.label10.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label10.ForeColor = System.Drawing.Color.White;
-            this.label10.Location = new System.Drawing.Point(220, 382);
+            this.label10.Location = new System.Drawing.Point(220, 455);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(87, 28);
             this.label10.TabIndex = 47;
@@ -441,7 +449,7 @@ namespace attackercrypter
             // 
             // textBox4
             // 
-            this.textBox4.Location = new System.Drawing.Point(108, 413);
+            this.textBox4.Location = new System.Drawing.Point(108, 486);
             this.textBox4.Name = "textBox4";
             this.textBox4.Size = new System.Drawing.Size(309, 20);
             this.textBox4.TabIndex = 48;
@@ -452,7 +460,7 @@ namespace attackercrypter
             this.label11.BackColor = System.Drawing.Color.Transparent;
             this.label11.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label11.ForeColor = System.Drawing.Color.White;
-            this.label11.Location = new System.Drawing.Point(49, 405);
+            this.label11.Location = new System.Drawing.Point(49, 478);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(43, 28);
             this.label11.TabIndex = 49;
@@ -600,7 +608,7 @@ namespace attackercrypter
             this.radio64.BackColor = System.Drawing.Color.Transparent;
             this.radio64.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Italic);
             this.radio64.ForeColor = System.Drawing.Color.Transparent;
-            this.radio64.Location = new System.Drawing.Point(677, 337);
+            this.radio64.Location = new System.Drawing.Point(685, 339);
             this.radio64.Name = "radio64";
             this.radio64.Size = new System.Drawing.Size(68, 32);
             this.radio64.TabIndex = 71;
@@ -640,21 +648,25 @@ namespace attackercrypter
             this.runpecheck.Text = "RUNPE Settings";
             this.runpecheck.UseVisualStyleBackColor = false;
             // 
-            // injectionpath
+            // Netinjectionpath
             // 
-            this.injectionpath.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.injectionpath.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.injectionpath.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.injectionpath.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.injectionpath.ForeColor = System.Drawing.Color.Black;
-            this.injectionpath.FormattingEnabled = true;
-            this.injectionpath.Items.AddRange(new object[] {
+            this.Netinjectionpath.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.Netinjectionpath.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.Netinjectionpath.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Netinjectionpath.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.Netinjectionpath.ForeColor = System.Drawing.Color.Black;
+            this.Netinjectionpath.FormattingEnabled = true;
+            this.Netinjectionpath.Items.AddRange(new object[] {
             "installutil.exe",
-            "RegAsm.exe"});
-            this.injectionpath.Location = new System.Drawing.Point(646, 415);
-            this.injectionpath.Name = "injectionpath";
-            this.injectionpath.Size = new System.Drawing.Size(293, 24);
-            this.injectionpath.TabIndex = 77;
+            "RegAsm.exe",
+            "MSBuild.exe",
+            "vbc.exe",
+            "RegSvcs.exe",
+            "CasPol.exe"});
+            this.Netinjectionpath.Location = new System.Drawing.Point(647, 436);
+            this.Netinjectionpath.Name = "Netinjectionpath";
+            this.Netinjectionpath.Size = new System.Drawing.Size(293, 24);
+            this.Netinjectionpath.TabIndex = 77;
             // 
             // powershellcommand
             // 
@@ -692,19 +704,104 @@ namespace attackercrypter
             this.Amsi.Text = "Bypass Amsi";
             this.Amsi.UseVisualStyleBackColor = false;
             // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.BackColor = System.Drawing.Color.Transparent;
+            this.label12.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label12.ForeColor = System.Drawing.Color.White;
+            this.label12.Location = new System.Drawing.Point(653, 405);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(218, 28);
+            this.label12.TabIndex = 81;
+            this.label12.Text = ".NetInjectionPathes";
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.BackColor = System.Drawing.Color.Transparent;
+            this.label13.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label13.ForeColor = System.Drawing.Color.White;
+            this.label13.Location = new System.Drawing.Point(643, 478);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(242, 28);
+            this.label13.TabIndex = 83;
+            this.label13.Text = "NativeInjectionPathes";
+            // 
+            // nativeinjection
+            // 
+            this.nativeinjection.AutoCompleteCustomSource.AddRange(new string[] {
+            "svchost.exe",
+            "schtasks.exe"});
+            this.nativeinjection.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.nativeinjection.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.nativeinjection.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.nativeinjection.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.nativeinjection.ForeColor = System.Drawing.Color.Black;
+            this.nativeinjection.FormattingEnabled = true;
+            this.nativeinjection.Items.AddRange(new object[] {
+            "svchost.exe",
+            "schtasks.exe"});
+            this.nativeinjection.Location = new System.Drawing.Point(637, 509);
+            this.nativeinjection.Name = "nativeinjection";
+            this.nativeinjection.Size = new System.Drawing.Size(293, 24);
+            this.nativeinjection.TabIndex = 82;
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.Transparent;
+            this.panel1.Controls.Add(this.isNet);
+            this.panel1.Controls.Add(this.isNative);
+            this.panel1.Location = new System.Drawing.Point(783, 337);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(147, 65);
+            this.panel1.TabIndex = 84;
+            // 
+            // isNet
+            // 
+            this.isNet.AutoSize = true;
+            this.isNet.BackColor = System.Drawing.Color.Transparent;
+            this.isNet.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Italic);
+            this.isNet.ForeColor = System.Drawing.Color.Transparent;
+            this.isNet.Location = new System.Drawing.Point(14, -3);
+            this.isNet.Name = "isNet";
+            this.isNet.Size = new System.Drawing.Size(74, 32);
+            this.isNet.TabIndex = 73;
+            this.isNet.TabStop = true;
+            this.isNet.Text = ".Net";
+            this.isNet.UseVisualStyleBackColor = false;
+            // 
+            // isNative
+            // 
+            this.isNative.AutoSize = true;
+            this.isNative.BackColor = System.Drawing.Color.Transparent;
+            this.isNative.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Italic);
+            this.isNative.ForeColor = System.Drawing.Color.White;
+            this.isNative.Location = new System.Drawing.Point(6, 35);
+            this.isNative.Name = "isNative";
+            this.isNative.Size = new System.Drawing.Size(98, 32);
+            this.isNative.TabIndex = 74;
+            this.isNative.TabStop = true;
+            this.isNative.Text = "Native";
+            this.isNative.UseVisualStyleBackColor = false;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::attackercrypter.Properties.Resources.kali_linux_3;
-            this.ClientSize = new System.Drawing.Size(1268, 506);
+            this.ClientSize = new System.Drawing.Size(1268, 546);
+            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.radio64);
+            this.Controls.Add(this.label13);
+            this.Controls.Add(this.nativeinjection);
+            this.Controls.Add(this.label12);
             this.Controls.Add(this.Amsi);
             this.Controls.Add(this.powershell);
             this.Controls.Add(this.powershellcommand);
-            this.Controls.Add(this.injectionpath);
+            this.Controls.Add(this.Netinjectionpath);
             this.Controls.Add(this.runpecheck);
             this.Controls.Add(this.radio32);
-            this.Controls.Add(this.radio64);
             this.Controls.Add(this.assemblyPrivatePart);
             this.Controls.Add(this.assemblyBuildPart);
             this.Controls.Add(this.assemblyMinorVersion);
@@ -763,6 +860,8 @@ namespace attackercrypter
             ((System.ComponentModel.ISupportInitialize)(this.assemblyMinorVersion)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.assemblyBuildPart)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.assemblyPrivatePart)).EndInit();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -821,10 +920,17 @@ namespace attackercrypter
         private System.Windows.Forms.RadioButton radio32;
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
         private System.Windows.Forms.CheckBox runpecheck;
-        private System.Windows.Forms.ComboBox injectionpath;
+        private System.Windows.Forms.ComboBox Netinjectionpath;
         private System.Windows.Forms.TextBox powershellcommand;
         private System.Windows.Forms.CheckBox powershell;
         private System.Windows.Forms.CheckBox Amsi;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.ComboBox nativeinjection;
+        private System.ComponentModel.BackgroundWorker backgroundWorker2;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.RadioButton isNet;
+        private System.Windows.Forms.RadioButton isNative;
     }
 }
 

