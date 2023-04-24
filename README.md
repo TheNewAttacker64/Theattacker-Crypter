@@ -20,8 +20,10 @@ DO NOT UPLOAD TO VIRUSTOTAL!!!
 - Ability to clone Assembly 
 - Ability to execute your own Encoded Powershell Commands
 - Ability to Disable Amsi even if you are not injecting .Net Paylaod
+- Ability to choose Payload type if it Native or .Net 
+- Added New injection Paths
 
-- [current last version](https://github.com/TheNewAttacker64/Theattacker-Crypter/releases/tag/0.2)
+- [current last version](https://github.com/TheNewAttacker64/Theattacker-Crypter/releases/tag/0.3)
 
 # poc
 
