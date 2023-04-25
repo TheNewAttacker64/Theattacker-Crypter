@@ -93,6 +93,11 @@ namespace attackercrypter
             this.panel1 = new System.Windows.Forms.Panel();
             this.isNet = new System.Windows.Forms.RadioButton();
             this.isNative = new System.Windows.Forms.RadioButton();
+            this.button7 = new System.Windows.Forms.Button();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.sock = new System.Windows.Forms.RadioButton();
+            this.tg = new System.Windows.Forms.RadioButton();
+            this.label14 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownSc)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownSleep)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureIcon)).BeginInit();
@@ -101,6 +106,7 @@ namespace attackercrypter
             ((System.ComponentModel.ISupportInitialize)(this.assemblyBuildPart)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.assemblyPrivatePart)).BeginInit();
             this.panel1.SuspendLayout();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // textBox1
@@ -752,6 +758,7 @@ namespace attackercrypter
             this.panel1.BackColor = System.Drawing.Color.Transparent;
             this.panel1.Controls.Add(this.isNet);
             this.panel1.Controls.Add(this.isNative);
+            this.panel1.ForeColor = System.Drawing.Color.Transparent;
             this.panel1.Location = new System.Drawing.Point(783, 337);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(147, 65);
@@ -785,12 +792,81 @@ namespace attackercrypter
             this.isNative.Text = "Native";
             this.isNative.UseVisualStyleBackColor = false;
             // 
+            // button7
+            // 
+            this.button7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            this.button7.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.button7.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button7.ForeColor = System.Drawing.Color.DimGray;
+            this.button7.Location = new System.Drawing.Point(209, 64);
+            this.button7.Name = "button7";
+            this.button7.Size = new System.Drawing.Size(125, 57);
+            this.button7.TabIndex = 86;
+            this.button7.Text = "Notify Settings";
+            this.button7.UseCompatibleTextRendering = true;
+            this.button7.UseVisualStyleBackColor = false;
+            this.button7.Click += new System.EventHandler(this.button7_Click_1);
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.BackColor = System.Drawing.Color.Transparent;
+            this.groupBox1.Controls.Add(this.sock);
+            this.groupBox1.Controls.Add(this.tg);
+            this.groupBox1.Controls.Add(this.button7);
+            this.groupBox1.Controls.Add(this.label14);
+            this.groupBox1.ForeColor = System.Drawing.Color.Transparent;
+            this.groupBox1.Location = new System.Drawing.Point(1019, 12);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(343, 140);
+            this.groupBox1.TabIndex = 87;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "groupBox1";
+            // 
+            // sock
+            // 
+            this.sock.AutoSize = true;
+            this.sock.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Italic);
+            this.sock.ForeColor = System.Drawing.Color.Transparent;
+            this.sock.Location = new System.Drawing.Point(71, 84);
+            this.sock.Name = "sock";
+            this.sock.Size = new System.Drawing.Size(103, 32);
+            this.sock.TabIndex = 30;
+            this.sock.TabStop = true;
+            this.sock.Text = "Socket";
+            this.sock.UseVisualStyleBackColor = true;
+            // 
+            // tg
+            // 
+            this.tg.AutoSize = true;
+            this.tg.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Italic);
+            this.tg.ForeColor = System.Drawing.Color.Transparent;
+            this.tg.Location = new System.Drawing.Point(69, 42);
+            this.tg.Name = "tg";
+            this.tg.Size = new System.Drawing.Size(123, 32);
+            this.tg.TabIndex = 29;
+            this.tg.TabStop = true;
+            this.tg.Text = "telegram";
+            this.tg.UseVisualStyleBackColor = true;
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.BackColor = System.Drawing.Color.Transparent;
+            this.label14.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label14.ForeColor = System.Drawing.Color.White;
+            this.label14.Location = new System.Drawing.Point(44, 4);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(168, 28);
+            this.label14.TabIndex = 28;
+            this.label14.Text = "Notfiy Settings";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::attackercrypter.Properties.Resources.kali_linux_3;
-            this.ClientSize = new System.Drawing.Size(1268, 546);
+            this.ClientSize = new System.Drawing.Size(1365, 559);
+            this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.radio64);
             this.Controls.Add(this.label13);
@@ -862,6 +938,8 @@ namespace attackercrypter
             ((System.ComponentModel.ISupportInitialize)(this.assemblyPrivatePart)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -931,6 +1009,11 @@ namespace attackercrypter
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.RadioButton isNet;
         private System.Windows.Forms.RadioButton isNative;
+        private System.Windows.Forms.Button button7;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.RadioButton sock;
+        private System.Windows.Forms.RadioButton tg;
+        private System.Windows.Forms.Label label14;
     }
 }
 
