@@ -52,6 +52,7 @@ DO NOT UPLOAD TO VIRUSTOTAL!!!
 
 - [x] Add Ability To execute your own powershell code 
 - [x] option To Disable Amsi from powershell 
+- [ ] Notify Methods When Code executing on Machine
 - [ ] Loading Payload locally instead of loading our shellcode from url
 - [ ] adding Different Encryption Methods 
 - [ ] Generate  Infected Undetected  PDF File
