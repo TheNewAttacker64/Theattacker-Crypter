@@ -62,8 +62,6 @@ DO NOT UPLOAD TO VIRUSTOTAL!!!
 - [ ] Linux Support
 
 
-
-
  
  # Support 
  
