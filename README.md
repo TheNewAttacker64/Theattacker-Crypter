@@ -22,6 +22,9 @@ DO NOT UPLOAD TO VIRUSTOTAL!!!
 - Ability to Disable Amsi even if you are not injecting .Net Paylaod
 - Ability to choose Payload type if it Native or .Net 
 - Added New injection Paths
+- Notify When stub Executed on Macihne 2 Methods Impelmented 
+     1. using  Telegrem
+     2. using  Socket TCP/IP server
 
 - [current last version](https://github.com/TheNewAttacker64/Theattacker-Crypter/releases/tag/0.3)
 
@@ -52,7 +55,7 @@ DO NOT UPLOAD TO VIRUSTOTAL!!!
 
 - [x] Add Ability To execute your own powershell code 
 - [x] option To Disable Amsi from powershell 
-- [ ] Notify Methods When Code executing on Machine
+- [x] Notify Methods When Code executing on Machine
 - [ ] Loading Payload locally instead of loading our shellcode from url
 - [ ] adding Different Encryption Methods 
 - [ ] Generate  Infected Undetected  PDF File
