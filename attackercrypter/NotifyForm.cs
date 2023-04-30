@@ -30,5 +30,10 @@ namespace attackercrypter
             MessageBox.Show("Done");
 
         }
+
+        private void NotifySettings_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

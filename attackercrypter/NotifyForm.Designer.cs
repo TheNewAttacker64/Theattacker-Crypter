@@ -44,10 +44,10 @@ namespace attackercrypter
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.BackColor = System.Drawing.Color.Transparent;
+            this.label5.BackColor = System.Drawing.Color.White;
             this.label5.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label5.ForeColor = System.Drawing.Color.White;
-            this.label5.Location = new System.Drawing.Point(36, 28);
+            this.label5.ForeColor = System.Drawing.Color.Black;
+            this.label5.Location = new System.Drawing.Point(7, 42);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(205, 28);
             this.label5.TabIndex = 28;
@@ -55,7 +55,9 @@ namespace attackercrypter
             // 
             // token
             // 
-            this.token.Location = new System.Drawing.Point(61, 59);
+            this.token.BackColor = System.Drawing.Color.White;
+            this.token.ForeColor = System.Drawing.Color.Red;
+            this.token.Location = new System.Drawing.Point(12, 101);
             this.token.Name = "token";
             this.token.Size = new System.Drawing.Size(158, 20);
             this.token.TabIndex = 29;
@@ -63,7 +65,9 @@ namespace attackercrypter
             // 
             // chatid
             // 
-            this.chatid.Location = new System.Drawing.Point(61, 85);
+            this.chatid.BackColor = System.Drawing.Color.White;
+            this.chatid.ForeColor = System.Drawing.Color.Red;
+            this.chatid.Location = new System.Drawing.Point(12, 136);
             this.chatid.Name = "chatid";
             this.chatid.Size = new System.Drawing.Size(158, 20);
             this.chatid.TabIndex = 30;
@@ -71,7 +75,8 @@ namespace attackercrypter
             // 
             // port
             // 
-            this.port.Location = new System.Drawing.Point(296, 85);
+            this.port.ForeColor = System.Drawing.Color.Red;
+            this.port.Location = new System.Drawing.Point(353, 110);
             this.port.Name = "port";
             this.port.Size = new System.Drawing.Size(158, 20);
             this.port.TabIndex = 56;
@@ -79,7 +84,8 @@ namespace attackercrypter
             // 
             // ip
             // 
-            this.ip.Location = new System.Drawing.Point(296, 59);
+            this.ip.ForeColor = System.Drawing.Color.Red;
+            this.ip.Location = new System.Drawing.Point(353, 85);
             this.ip.Name = "ip";
             this.ip.Size = new System.Drawing.Size(158, 20);
             this.ip.TabIndex = 55;
@@ -88,10 +94,10 @@ namespace attackercrypter
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.Transparent;
+            this.label1.BackColor = System.Drawing.Color.White;
             this.label1.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(260, 28);
+            this.label1.ForeColor = System.Drawing.Color.Black;
+            this.label1.Location = new System.Drawing.Point(262, 42);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(256, 28);
             this.label1.TabIndex = 54;
@@ -99,7 +105,8 @@ namespace attackercrypter
             // 
             // password
             // 
-            this.password.Location = new System.Drawing.Point(296, 111);
+            this.password.ForeColor = System.Drawing.Color.Red;
+            this.password.Location = new System.Drawing.Point(353, 137);
             this.password.Name = "password";
             this.password.Size = new System.Drawing.Size(158, 20);
             this.password.TabIndex = 58;
@@ -107,30 +114,32 @@ namespace attackercrypter
             // 
             // button6
             // 
-            this.button6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            this.button6.BackColor = System.Drawing.Color.Green;
             this.button6.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.button6.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button6.ForeColor = System.Drawing.Color.DimGray;
-            this.button6.Location = new System.Drawing.Point(296, 137);
+            this.button6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button6.ForeColor = System.Drawing.Color.White;
+            this.button6.Location = new System.Drawing.Point(353, 168);
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(158, 36);
             this.button6.TabIndex = 59;
-            this.button6.Text = "Save Server Creds";
+            this.button6.Text = "Save";
             this.button6.UseCompatibleTextRendering = true;
             this.button6.UseVisualStyleBackColor = false;
             this.button6.Click += new System.EventHandler(this.button6_Click);
             // 
             // button1
             // 
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            this.button1.BackColor = System.Drawing.Color.Green;
             this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button1.ForeColor = System.Drawing.Color.DimGray;
-            this.button1.Location = new System.Drawing.Point(61, 111);
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.ForeColor = System.Drawing.Color.White;
+            this.button1.Location = new System.Drawing.Point(12, 168);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(158, 36);
             this.button1.TabIndex = 60;
-            this.button1.Text = "Save Tg bot Creds";
+            this.button1.Text = "Save";
             this.button1.UseCompatibleTextRendering = true;
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
@@ -139,7 +148,7 @@ namespace attackercrypter
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = global::attackercrypter.Properties.Resources.kali_linux_3;
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(523, 234);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.button6);
@@ -152,7 +161,8 @@ namespace attackercrypter
             this.Controls.Add(this.label5);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "NotifySettings";
-            this.Text = "NotifyForm";
+            this.Text = "Notification Settings";
+            this.Load += new System.EventHandler(this.NotifySettings_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

