@@ -25,8 +25,9 @@ DO NOT UPLOAD TO VIRUSTOTAL!!!
 - Notify When stub Executed on Macihne 2 Methods Impelmented 
      1. using  Telegrem
      2. using  Socket TCP/IP server
-
-- [current last version](https://github.com/TheNewAttacker64/Theattacker-Crypter/releases/tag/0.3)
+- Fixed SomeBugs 
+- New Ui
+- [current last version](https://github.com/TheNewAttacker64/Theattacker-Crypter/releases/tag/0.5)
 
 # poc
 
