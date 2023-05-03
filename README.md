@@ -27,7 +27,8 @@ DO NOT UPLOAD TO VIRUSTOTAL!!!
      2. using  Socket TCP/IP server
 - Fixed SomeBugs 
 - New Ui
-- [current last version](https://github.com/TheNewAttacker64/Theattacker-Crypter/releases/tag/0.5)
+- Mutex to prevent the process from running Multiple times
+- [current last version](https://github.com/TheNewAttacker64/Theattacker-Crypter/releases/tag/0.6)
 
 # poc
 
@@ -57,7 +58,7 @@ DO NOT UPLOAD TO VIRUSTOTAL!!!
 - [x] Add Ability To execute your own powershell code 
 - [x] option To Disable Amsi from powershell 
 - [x] Notify Methods When Code executing on Machine
-- [ ] Mutex to prevent Porcess from running Multiple times
+- [x] Mutex to prevent Porcess from running Multiple times
 - [ ] Loading Payload locally instead of loading our shellcode from url
 - [ ] adding Different Encryption Methods 
 - [ ] Linux Support
