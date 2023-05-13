@@ -30,7 +30,7 @@ DO NOT UPLOAD TO VIRUSTOTAL!!!
 - Mutex to prevent the process from running Multiple times
 - Simple .Net Obfuscator
 - Melt Function for the exe to Delete it self after injecting the payload
-- [current last version](https://github.com/TheNewAttacker64/Theattacker-Crypter/releases/tag/0.6)
+- [current last version](https://github.com/TheNewAttacker64/Theattacker-Crypter/releases/tag/0.7)
 
 # poc
 
