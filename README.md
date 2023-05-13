@@ -59,6 +59,7 @@ DO NOT UPLOAD TO VIRUSTOTAL!!!
 - [x] option To Disable Amsi from powershell 
 - [x] Notify Methods When Code executing on Machine
 - [x] Mutex to prevent Porcess from running Multiple times
+- [ ] Delete it self
 - [ ] Loading Payload locally instead of loading our shellcode from url
 - [ ] adding Different Encryption Methods 
 - [ ] Linux Support
