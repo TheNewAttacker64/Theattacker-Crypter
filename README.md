@@ -28,6 +28,8 @@ DO NOT UPLOAD TO VIRUSTOTAL!!!
 - Fixed SomeBugs 
 - New Ui
 - Mutex to prevent the process from running Multiple times
+- Simple .Net Obfuscator
+- Melt Function for the exe to Delete it self after injecting the payload
 - [current last version](https://github.com/TheNewAttacker64/Theattacker-Crypter/releases/tag/0.6)
 
 # poc
@@ -59,7 +61,7 @@ DO NOT UPLOAD TO VIRUSTOTAL!!!
 - [x] option To Disable Amsi from powershell 
 - [x] Notify Methods When Code executing on Machine
 - [x] Mutex to prevent Porcess from running Multiple times
-- [ ] Delete it self
+- [x] Delete it self
 - [ ] Loading Payload locally instead of loading our shellcode from url
 - [ ] adding Different Encryption Methods 
 - [ ] Linux Support
