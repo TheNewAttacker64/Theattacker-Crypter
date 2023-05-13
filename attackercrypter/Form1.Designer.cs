@@ -103,6 +103,9 @@ namespace attackercrypter
             this.label15 = new System.Windows.Forms.Label();
             this.mutex = new System.Windows.Forms.TextBox();
             this.mutexgen = new System.Windows.Forms.Button();
+            this.label16 = new System.Windows.Forms.Label();
+            this.button8 = new System.Windows.Forms.Button();
+            this.melt = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownSc)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownSleep)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureIcon)).BeginInit();
@@ -526,7 +529,7 @@ namespace attackercrypter
             this.author.AutoSize = true;
             this.author.BackColor = System.Drawing.Color.Transparent;
             this.author.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Italic);
-            this.author.Location = new System.Drawing.Point(1299, 14);
+            this.author.Location = new System.Drawing.Point(1384, 30);
             this.author.Name = "author";
             this.author.Size = new System.Drawing.Size(54, 28);
             this.author.TabIndex = 51;
@@ -543,7 +546,7 @@ namespace attackercrypter
             this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button6.ForeColor = System.Drawing.Color.White;
-            this.button6.Location = new System.Drawing.Point(1209, 480);
+            this.button6.Location = new System.Drawing.Point(1287, 495);
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(125, 57);
             this.button6.TabIndex = 52;
@@ -558,7 +561,7 @@ namespace attackercrypter
             this.assembly.BackColor = System.Drawing.Color.Transparent;
             this.assembly.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.assembly.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.assembly.Location = new System.Drawing.Point(1155, 246);
+            this.assembly.Location = new System.Drawing.Point(1233, 261);
             this.assembly.Name = "assembly";
             this.assembly.Size = new System.Drawing.Size(241, 33);
             this.assembly.TabIndex = 53;
@@ -567,7 +570,7 @@ namespace attackercrypter
             // 
             // txtCopyright
             // 
-            this.txtCopyright.Location = new System.Drawing.Point(1199, 317);
+            this.txtCopyright.Location = new System.Drawing.Point(1277, 332);
             this.txtCopyright.Margin = new System.Windows.Forms.Padding(2);
             this.txtCopyright.Name = "txtCopyright";
             this.txtCopyright.Size = new System.Drawing.Size(143, 20);
@@ -575,7 +578,7 @@ namespace attackercrypter
             // 
             // txtTrademark
             // 
-            this.txtTrademark.Location = new System.Drawing.Point(1199, 413);
+            this.txtTrademark.Location = new System.Drawing.Point(1277, 428);
             this.txtTrademark.Margin = new System.Windows.Forms.Padding(2);
             this.txtTrademark.Name = "txtTrademark";
             this.txtTrademark.Size = new System.Drawing.Size(143, 20);
@@ -583,7 +586,7 @@ namespace attackercrypter
             // 
             // txtDescription
             // 
-            this.txtDescription.Location = new System.Drawing.Point(1199, 365);
+            this.txtDescription.Location = new System.Drawing.Point(1277, 380);
             this.txtDescription.Margin = new System.Windows.Forms.Padding(2);
             this.txtDescription.Name = "txtDescription";
             this.txtDescription.Size = new System.Drawing.Size(143, 20);
@@ -591,7 +594,7 @@ namespace attackercrypter
             // 
             // txtCompany
             // 
-            this.txtCompany.Location = new System.Drawing.Point(1199, 389);
+            this.txtCompany.Location = new System.Drawing.Point(1277, 404);
             this.txtCompany.Margin = new System.Windows.Forms.Padding(2);
             this.txtCompany.Name = "txtCompany";
             this.txtCompany.Size = new System.Drawing.Size(143, 20);
@@ -599,7 +602,7 @@ namespace attackercrypter
             // 
             // txtProduct
             // 
-            this.txtProduct.Location = new System.Drawing.Point(1199, 293);
+            this.txtProduct.Location = new System.Drawing.Point(1277, 308);
             this.txtProduct.Margin = new System.Windows.Forms.Padding(2);
             this.txtProduct.Name = "txtProduct";
             this.txtProduct.Size = new System.Drawing.Size(143, 20);
@@ -607,7 +610,7 @@ namespace attackercrypter
             // 
             // assemblyMajorVersion
             // 
-            this.assemblyMajorVersion.Location = new System.Drawing.Point(1199, 451);
+            this.assemblyMajorVersion.Location = new System.Drawing.Point(1277, 466);
             this.assemblyMajorVersion.Margin = new System.Windows.Forms.Padding(2);
             this.assemblyMajorVersion.Name = "assemblyMajorVersion";
             this.assemblyMajorVersion.Size = new System.Drawing.Size(31, 20);
@@ -615,7 +618,7 @@ namespace attackercrypter
             // 
             // assemblyMinorVersion
             // 
-            this.assemblyMinorVersion.Location = new System.Drawing.Point(1235, 451);
+            this.assemblyMinorVersion.Location = new System.Drawing.Point(1313, 466);
             this.assemblyMinorVersion.Margin = new System.Windows.Forms.Padding(2);
             this.assemblyMinorVersion.Name = "assemblyMinorVersion";
             this.assemblyMinorVersion.Size = new System.Drawing.Size(31, 20);
@@ -623,7 +626,7 @@ namespace attackercrypter
             // 
             // assemblyBuildPart
             // 
-            this.assemblyBuildPart.Location = new System.Drawing.Point(1273, 451);
+            this.assemblyBuildPart.Location = new System.Drawing.Point(1351, 466);
             this.assemblyBuildPart.Margin = new System.Windows.Forms.Padding(2);
             this.assemblyBuildPart.Name = "assemblyBuildPart";
             this.assemblyBuildPart.Size = new System.Drawing.Size(31, 20);
@@ -631,7 +634,7 @@ namespace attackercrypter
             // 
             // assemblyPrivatePart
             // 
-            this.assemblyPrivatePart.Location = new System.Drawing.Point(1311, 451);
+            this.assemblyPrivatePart.Location = new System.Drawing.Point(1389, 466);
             this.assemblyPrivatePart.Margin = new System.Windows.Forms.Padding(2);
             this.assemblyPrivatePart.Name = "assemblyPrivatePart";
             this.assemblyPrivatePart.Size = new System.Drawing.Size(31, 20);
@@ -639,7 +642,7 @@ namespace attackercrypter
             // 
             // txtTitle
             // 
-            this.txtTitle.Location = new System.Drawing.Point(1199, 341);
+            this.txtTitle.Location = new System.Drawing.Point(1277, 356);
             this.txtTitle.Margin = new System.Windows.Forms.Padding(2);
             this.txtTitle.Name = "txtTitle";
             this.txtTitle.Size = new System.Drawing.Size(143, 20);
@@ -856,7 +859,7 @@ namespace attackercrypter
             this.groupBox1.Controls.Add(this.button7);
             this.groupBox1.Controls.Add(this.label14);
             this.groupBox1.ForeColor = System.Drawing.Color.Transparent;
-            this.groupBox1.Location = new System.Drawing.Point(1087, 56);
+            this.groupBox1.Location = new System.Drawing.Point(1172, 72);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(274, 130);
             this.groupBox1.TabIndex = 87;
@@ -956,13 +959,60 @@ namespace attackercrypter
             this.mutexgen.UseVisualStyleBackColor = false;
             this.mutexgen.Click += new System.EventHandler(this.mutexgen_Click);
             // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.BackColor = System.Drawing.Color.Transparent;
+            this.label16.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label16.ForeColor = System.Drawing.Color.White;
+            this.label16.Location = new System.Drawing.Point(961, 70);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(186, 29);
+            this.label16.TabIndex = 92;
+            this.label16.Text = ".Net Obfuscate";
+            // 
+            // button8
+            // 
+            this.button8.BackColor = System.Drawing.Color.Red;
+            this.button8.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.button8.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button8.FlatAppearance.BorderSize = 0;
+            this.button8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button8.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button8.ForeColor = System.Drawing.Color.White;
+            this.button8.Location = new System.Drawing.Point(983, 101);
+            this.button8.Name = "button8";
+            this.button8.Size = new System.Drawing.Size(125, 57);
+            this.button8.TabIndex = 93;
+            this.button8.Text = "Obfuscate a File";
+            this.button8.UseCompatibleTextRendering = true;
+            this.button8.UseVisualStyleBackColor = false;
+            this.button8.Click += new System.EventHandler(this.button8_Click);
+            // 
+            // melt
+            // 
+            this.melt.AutoSize = true;
+            this.melt.BackColor = System.Drawing.Color.Transparent;
+            this.melt.Cursor = System.Windows.Forms.Cursors.Cross;
+            this.melt.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.melt.ForeColor = System.Drawing.Color.Transparent;
+            this.melt.Location = new System.Drawing.Point(423, 350);
+            this.melt.Name = "melt";
+            this.melt.Size = new System.Drawing.Size(86, 20);
+            this.melt.TabIndex = 94;
+            this.melt.Text = "Melt File";
+            this.melt.UseVisualStyleBackColor = false;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.BackgroundImage = global::attackercrypter.Properties.Resources.kali_linux_3;
-            this.ClientSize = new System.Drawing.Size(1416, 559);
+            this.ClientSize = new System.Drawing.Size(1473, 559);
+            this.Controls.Add(this.melt);
+            this.Controls.Add(this.button8);
+            this.Controls.Add(this.label16);
             this.Controls.Add(this.mutexgen);
             this.Controls.Add(this.mutex);
             this.Controls.Add(this.label15);
@@ -1121,6 +1171,9 @@ namespace attackercrypter
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.TextBox mutex;
         private System.Windows.Forms.Button mutexgen;
+        private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.Button button8;
+        private System.Windows.Forms.CheckBox melt;
     }
 }
 

