@@ -66,11 +66,6 @@ DO NOT UPLOAD TO VIRUSTOTAL!!!
 - [ ] adding Different Encryption Methods 
 - [ ] Linux Support
 
-
-# Notify Server Example
-
-
-   ![notify](notify.PNG)
  
  # Support 
  
