@@ -30,7 +30,8 @@ DO NOT UPLOAD TO VIRUSTOTAL!!!
 - Mutex to prevent the process from running Multiple times
 - Simple .Net Obfuscator
 - Melt Function for the exe to Delete it self after injecting the payload
-- [current last version](https://github.com/TheNewAttacker64/Theattacker-Crypter/releases/tag/0.7)
+- File Pumper
+- [current last version](https://github.com/TheNewAttacker64/Theattacker-Crypter/releases/tag/0.8)
 
 # poc
 
@@ -62,7 +63,7 @@ DO NOT UPLOAD TO VIRUSTOTAL!!!
 - [x] Notify Methods When Code executing on Machine
 - [x] Mutex to prevent Porcess from running Multiple times
 - [x] Delete it self
-- [ ] File-Pumper 
+- [x] File-Pumper 
 - [ ] Loading Payload locally instead of loading our shellcode from url
 - [ ] adding Different Encryption Methods 
 - [ ] Linux Support
