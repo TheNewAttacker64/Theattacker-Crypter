@@ -62,6 +62,7 @@ DO NOT UPLOAD TO VIRUSTOTAL!!!
 - [x] Notify Methods When Code executing on Machine
 - [x] Mutex to prevent Porcess from running Multiple times
 - [x] Delete it self
+- [ ] File-Pumper 
 - [ ] Loading Payload locally instead of loading our shellcode from url
 - [ ] adding Different Encryption Methods 
 - [ ] Linux Support
