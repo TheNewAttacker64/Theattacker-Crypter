@@ -26,7 +26,7 @@ namespace attackercrypter
 
     {
         private readonly NotifySettings notifyForm;
-
+        private readonly pumpform pumpform;
         int everytihnggood = 1;
         string RunPE32 = Properties.Resources.Nik32;
         string RunPE64 = Properties.Resources.NIK64;
@@ -34,6 +34,7 @@ namespace attackercrypter
         public Form1()
         {
             this.notifyForm = new NotifySettings();
+            this.pumpform = new pumpform();
             InitializeComponent();
             Injection.SelectedItem = "AssemblyLoad(.Net)";
             Netinjectionpath.SelectedItem = "RegAsm.exe";
@@ -109,6 +110,7 @@ namespace attackercrypter
             {
                 textBox1.Text = CRY.FileName;
             }
+           
         }
 
         private void button4_Click(object sender, EventArgs e)
@@ -652,6 +654,10 @@ namespace attackercrypter
             }
         }
 
+        private void pump_Click(object sender, EventArgs e)
+        {
+            pumpform.Show();
+        }
     }
     }
 
