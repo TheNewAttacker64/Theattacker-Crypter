@@ -31,11 +31,16 @@ DO NOT UPLOAD TO VIRUSTOTAL!!!
 - Simple .Net Obfuscator
 - Melt Function for the exe to Delete it self after injecting the payload
 - File Pumper
+- Anti VM Payload won t execute in Vms
 - [current last version](https://github.com/TheNewAttacker64/Theattacker-Crypter/releases/tag/0.8)
 
 # poc
 
  ![POC](POC.jpg)
+ 
+ # AntiVmExample
+ 
+   ![VM](VM.jpg)
 
 # Usage
 
@@ -64,7 +69,7 @@ DO NOT UPLOAD TO VIRUSTOTAL!!!
 - [x] Mutex to prevent Porcess from running Multiple times
 - [x] Delete it self
 - [x] File-Pumper 
-- [ ] Anti-VM
+- [x] Anti-VM
 - [ ] HTTP Server for Delivering Payloads
 - [ ] Loading Payload locally instead of loading our shellcode from url
 - [ ] adding Different Encryption Methods 
