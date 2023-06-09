@@ -64,6 +64,8 @@ DO NOT UPLOAD TO VIRUSTOTAL!!!
 - [x] Mutex to prevent Porcess from running Multiple times
 - [x] Delete it self
 - [x] File-Pumper 
+- [ ] Anti-VM
+- [ ] HTTP Server for Delivering Payloads
 - [ ] Loading Payload locally instead of loading our shellcode from url
 - [ ] adding Different Encryption Methods 
 - [ ] Linux Support
