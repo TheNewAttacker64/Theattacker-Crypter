@@ -162,10 +162,11 @@ namespace attackercrypter.Properties {
         ///using System.Net.Sockets;
         ///using System.Threading;
         ///using System.Windows.Forms;
+        ///using System.Management;
         ///
         ///[assembly: AssemblyTitle(&quot;#AssemblyProduct&quot;)]
         ///[assembly: AssemblyDescription(&quot;#AssemblyDescription&quot;)]
-        ///[assembly: AssemblyCompany(&quot;#AssemblyProduct&quot;) [rest of string was truncated]&quot;;.
+        ///[assembly: AssemblyC [rest of string was truncated]&quot;;.
         /// </summary>
         internal static string Program {
             get {

