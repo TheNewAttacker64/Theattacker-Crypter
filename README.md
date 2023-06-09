@@ -32,7 +32,7 @@ DO NOT UPLOAD TO VIRUSTOTAL!!!
 - Melt Function for the exe to Delete it self after injecting the payload
 - File Pumper
 - Anti VM Payload won t execute in Vms
-- [current last version](https://github.com/TheNewAttacker64/Theattacker-Crypter/releases/tag/0.8)
+- [current last version](https://github.com/TheNewAttacker64/Theattacker-Crypter/releases/tag/0.9)
 
 # poc
 
