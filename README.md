@@ -70,6 +70,7 @@ DO NOT UPLOAD TO VIRUSTOTAL!!!
 - [x] Delete it self
 - [x] File-Pumper 
 - [x] Anti-VM
+- [ ] Undetected Binder
 - [ ] HTTP Server for Delivering Payloads
 - [ ] Loading Payload locally instead of loading our shellcode from url
 - [ ] adding Different Encryption Methods 
